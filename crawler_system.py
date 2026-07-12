@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-AoV / Liên Quân Mobile - Consolidated Meta, Avatar & Counter-Pick Crawler
+AoV / Liên Quân Mobile - Consolidated Meta, Avatar & Detailed Counter-Pick Crawler
 This script crawls the complete database of 129 AoV heroes:
 1. Queries aov-builds.com/tuong/ to get the official Vietnamese roster, display names, and webp avatars.
 2. Queries rovmeta.com to parse the Next.js stream payload for S+/S/A/B/C tiers, win/pick/ban rates, roles, and counter-pick references.
-3. Resolves Next.js pointers, maps names, translates roles to lanes, maps counter-pick relationships, and merges everything.
-4. Auto-patches app.js with the updated HERO_DATABASE.
+3. Concurrently queries aov-builds.com/khac-che/<slug>/ using 10 threads to extract lane-specific counters and their detailed reasons in Vietnamese.
+4. Falls back to RovMeta counters with default messages for any missing/404 counter pages.
+5. Auto-patches app.js with the updated HERO_DATABASE.
 """
 
 import os
 import json
 import requests
 import re
+import time
 import unicodedata
+import concurrent.futures
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION & ENDPOINTS ---
@@ -122,6 +125,56 @@ def estimate_attributes(role):
     elif role == "SP":
         return { "damage": 1, "tankiness": 5, "mobility": 2, "teamfight": 5, "split_push": 1 }
     return { "damage": 3, "tankiness": 3, "mobility": 3, "teamfight": 3, "split_push": 3 }
+
+def crawl_hero_counters_from_aovbuilds(slug, meta_id_to_local_id):
+    """Crawls and parses the detailed counter page from aov-builds.com/khac-che/<slug>/"""
+    url = f"https://aov-builds.com/khac-che/{slug}/"
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=8)
+        if response.status_code != 200:
+            return slug, None
+            
+        soup = BeautifulSoup(response.content, "html.parser")
+        accordions = soup.find_all("div", class_="counter-box")
+        
+        parsed_counters = []
+        seen_counter_ids = set()
+        
+        for box in accordions:
+            content_div = box.find("div", class_="accordion__content")
+            if not content_div:
+                continue
+                
+            items = content_div.find_all("div", class_="nav__tab__content__item")
+            for item in items:
+                text_lines = [l.strip() for l in item.text.split("\n") if l.strip()]
+                if not text_lines:
+                    continue
+                    
+                hero_name = text_lines[0]
+                reason = " ".join(text_lines[1:]) if len(text_lines) > 1 else ""
+                reason = re.sub(r'\s+', ' ', reason).strip()
+                
+                # Resolve local ID
+                c_meta_id = clean_id(hero_name)
+                c_meta_id = UNMATCHED_REPLACEMENTS.get(c_meta_id, c_meta_id)
+                
+                c_local_id = meta_id_to_local_id.get(c_meta_id)
+                if not c_local_id:
+                    for cid in meta_id_to_local_id:
+                        if cid in c_meta_id or c_meta_id in cid:
+                            c_local_id = meta_id_to_local_id[cid]
+                            break
+                            
+                if c_local_id and c_local_id not in seen_counter_ids:
+                    seen_counter_ids.add(c_local_id)
+                    parsed_counters.append({
+                        "id": c_local_id,
+                        "reason": reason
+                    })
+        return slug, parsed_counters
+    except Exception:
+        return slug, None
 
 def main():
     print("[+] KHỞI ĐỘNG TIẾN TRÌNH CÀO DỮ LIỆU ĐỒNG BỘ ĐỘC QUYỀN (AOV-BUILDS & ROVMETA)...")
@@ -240,10 +293,8 @@ def main():
         print(f"[-] Lỗi kết nối tới RovMeta: {e}")
 
     # ====================================================
-    # --- PHASE 3: MERGE DATA & UPDATE TARGET FILES ---
+    # --- PHASE 3: CONCURRENT COUNTERS CRAWL (AOVBUILDS) -
     # ====================================================
-    print("[+] 3. Trộn và đồng bộ hóa cơ sở dữ liệu...")
-    
     # Build mapping from English clean IDs to local clean IDs
     meta_id_to_local_id = {}
     for h in aov_heroes:
@@ -262,6 +313,32 @@ def main():
         if meta_match_id:
             meta_id_to_local_id[meta_match_id] = local_id
 
+    print(f"[+] 3. Khởi chạy bộ cào khắc chế đồng thời từ AOV-Builds (10 luồng)...")
+    aov_counters_db = {}
+    start_time = time.time()
+    
+    # Spawn 10 threads to fetch all counter pages concurrently
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_slug = {
+            executor.submit(crawl_hero_counters_from_aovbuilds, h["slug"], meta_id_to_local_id): h["slug"] 
+            for h in aov_heroes
+        }
+        for future in concurrent.futures.as_completed(future_to_slug):
+            slug = future_to_slug[future]
+            try:
+                slug, counters = future.result()
+                if counters:
+                    aov_counters_db[slug] = counters
+            except Exception:
+                pass
+                
+    end_time = time.time()
+    print(f"[🎉] Hoàn tất thu thập khắc chế từ AOV-Builds trong {end_time - start_time:.2f} giây. Tìm thấy {len(aov_counters_db)}/{len(aov_heroes)} trang chi tiết.")
+
+    # ====================================================
+    # --- PHASE 4: MERGE DATA & UPDATE TARGET FILES ---
+    # ====================================================
+    print("[+] 4. Trộn và đồng bộ hóa cơ sở dữ liệu...")
     crawled_database = []
     meta_matches = 0
     ad_count = 0
@@ -292,7 +369,6 @@ def main():
         ban_rate = 1.0
         tier = "A"
         raw_role = "warrior"
-        local_counters = []
         
         if meta_match:
             win_rate = meta_match["win_rate"]
@@ -301,9 +377,16 @@ def main():
             tier = meta_match["tier"]
             raw_role = meta_match["role"]
             meta_matches += 1
-            
-            # Resolve counter-pick IDs
-            raw_item = meta_match.get("raw_item", {})
+
+        # Mapped counters container
+        merged_counters = []
+        
+        # Priority 1: AOV-Builds detailed counters (if exists)
+        if slug in aov_counters_db and aov_counters_db[slug]:
+            merged_counters = aov_counters_db[slug]
+        else:
+            # Priority 2: Fallback to RovMeta generic counters
+            raw_item = meta_match.get("raw_item", {}) if meta_match else {}
             raw_counters = raw_item.get("counters", []) if isinstance(raw_item, dict) else []
             for c in raw_counters:
                 if isinstance(c, str):
@@ -317,21 +400,25 @@ def main():
                         if resolved_chero:
                             chero = resolved_chero
                     if isinstance(chero, dict):
-                        name_en = chero.get("name_en", "")
-                        if name_en:
-                            c_meta_id = clean_id(name_en)
-                            # Handle legacy name replacements
+                        cname = chero.get("name_en", "")
+                        if cname:
+                            c_meta_id = clean_id(cname)
                             c_meta_id = UNMATCHED_REPLACEMENTS.get(c_meta_id, c_meta_id)
-                            
                             c_local_id = meta_id_to_local_id.get(c_meta_id)
                             if not c_local_id:
                                 for cid in meta_id_to_local_id:
                                     if cid in c_meta_id or c_meta_id in cid:
                                         c_local_id = meta_id_to_local_id[cid]
                                         break
-                            if c_local_id and c_local_id not in local_counters:
-                                local_counters.append(c_local_id)
-                                total_counters_linked += 1
+                            if c_local_id:
+                                # Generate a generic explanation
+                                c_vn_name = next((h_vn["name"] for h_vn in aov_heroes if clean_id(h_vn["slug"]) == c_local_id), cname)
+                                merged_counters.append({
+                                    "id": c_local_id,
+                                    "reason": f"{c_vn_name} có tỷ lệ thắng đối đầu cao và bộ chiêu thức khắc chế {name_vn} theo dữ liệu meta."
+                                })
+
+        total_counters_linked += len(merged_counters)
             
         # Map RovMeta archetype roles to lane roles
         main_role = ROVMETA_ROLE_TO_LANE.get(raw_role, "Top")
@@ -355,12 +442,12 @@ def main():
             "pick_rate": pick_rate,
             "ban_rate": ban_rate,
             "attributes": attributes,
-            "counters": local_counters,
+            "counters": merged_counters,
             "tags": [main_role.lower(), "crawled"]
         })
         
     print(f"[+] Trộn xong! Tổng cộng: {len(crawled_database)} tướng. Khớp chỉ số RovMeta: {meta_matches}/{len(aov_heroes)}.")
-    print(f"[+] Tổng số mối liên kết khắc chế đã nhập: {total_counters_linked}")
+    print(f"[+] Tổng số mối liên kết khắc chế chi tiết đã nhập: {total_counters_linked}")
     print(f"[+] Số lượng tướng AD (Xạ Thủ): {ad_count}")
     
     # Write json output

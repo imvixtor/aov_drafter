@@ -109,19 +109,29 @@
                 <!-- HERO SELECTION GRID PANEL -->
                 <div class="panel selection-panel">
                     <div class="filter-bar">
-                        <div class="search-box">
-                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                            <input type="text" id="search-input" placeholder="Tìm tên tướng..." autocomplete="off">
-                            <button id="clear-search-btn" class="clear-search-btn"><i
-                                    class="fa-solid fa-xmark"></i></button>
-                        </div>
                         <div class="role-filters" id="role-filters">
                             <button class="filter-tab active" data-role="all" id="btn-filter-all">Tất cả</button>
-                            <button class="filter-tab" data-role="Top" id="btn-filter-top">Đường Tà Thần (Top)</button>
-                            <button class="filter-tab" data-role="Jungle" id="btn-filter-jungle">Rừng (Jg)</button>
-                            <button class="filter-tab" data-role="Mid" id="btn-filter-mid">Đường Giữa (Mid)</button>
-                            <button class="filter-tab" data-role="AD" id="btn-filter-ad">Xạ Thủ (AD)</button>
-                            <button class="filter-tab" data-role="SP" id="btn-filter-sp">Trợ Thủ (SP)</button>
+                            <button class="filter-tab" data-role="Top" id="btn-filter-top">Top</button>
+                            <button class="filter-tab" data-role="Jungle" id="btn-filter-jungle">Rừng</button>
+                            <button class="filter-tab" data-role="Mid" id="btn-filter-mid">Mid</button>
+                            <button class="filter-tab" data-role="AD" id="btn-filter-ad">AD</button>
+                            <button class="filter-tab" data-role="SP" id="btn-filter-sp">SP</button>
+                        </div>
+                        <div class="filter-controls-right">
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="search-input" placeholder="Tìm tên tướng..." autocomplete="off">
+                                <button id="clear-search-btn" class="clear-search-btn"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="sort-box">
+                                <select id="sort-select" class="sort-select">
+                                    <option value="name">Xếp theo: Tên chữ cái</option>
+                                    <option value="tier">Xếp theo: Tier List</option>
+                                    <option value="win_rate">Xếp theo: Tỷ lệ thắng</option>
+                                    <option value="pick_rate">Xếp theo: Tỷ lệ chọn</option>
+                                    <option value="ban_rate">Xếp theo: Tỷ lệ cấm</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -136,17 +146,22 @@
                 <!-- RECOMMENDATION & TEAM STATS PANEL -->
                 <div class="panel recommendation-panel">
                     <div class="rec-header">
-                        <h3 id="recommendation-title"><i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý
-                            TƯỚNG TỐI ƯU (ĐỘI XANH)</h3>
+                        <h3 id="recommendation-title"><i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI XANH)</h3>
                         <span class="role-target" id="missing-roles-text">Vị trí khuyên chọn: Đang tính toán...</span>
                     </div>
                     <div class="rec-filters" id="rec-role-filters">
-                        <button class="rec-filter-tab active" data-role="all">Tất cả</button>
-                        <button class="rec-filter-tab" data-role="Top">Top</button>
-                        <button class="rec-filter-tab" data-role="Jungle">Rừng</button>
-                        <button class="rec-filter-tab" data-role="Mid">Mid</button>
-                        <button class="rec-filter-tab" data-role="AD">AD</button>
-                        <button class="rec-filter-tab" data-role="SP">SP</button>
+                        <div class="rec-filters-left">
+                            <button class="rec-filter-tab active" data-role="all">Tất cả</button>
+                            <button class="rec-filter-tab" data-role="Top">Top</button>
+                            <button class="rec-filter-tab" data-role="Jungle">Rừng</button>
+                            <button class="rec-filter-tab" data-role="Mid">Mid</button>
+                            <button class="rec-filter-tab" data-role="AD">AD</button>
+                            <button class="rec-filter-tab" data-role="SP">SP</button>
+                        </div>
+                        <div class="rec-modes-right" id="rec-modes">
+                            <button class="mode-btn active" data-mode="meta"><i class="fa-solid fa-fire"></i> Gợi ý theo Meta</button>
+                            <button class="mode-btn" data-mode="counter"><i class="fa-solid fa-shield-halved"></i> Gợi ý theo Khắc chế</button>
+                        </div>
                     </div>
 
                     <div class="recommendations-container" id="recommendations-container">
