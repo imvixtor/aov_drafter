@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <!-- Google Fonts: Be Vietnam Pro (Vietnamese Compatible) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Web Favicon: AoV Logo -->
     <link rel="icon" type="image/png" href="img/aov_logo.png">
     <!-- FontAwesome for Premium Icons -->
@@ -16,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Theme setup script to prevent flash of wrong theme -->
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem('theme') || 'system';
             const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
             document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -24,9 +26,10 @@
         })();
     </script>
 </head>
+
 <body>
     <div class="app-background"></div>
-    
+
     <div class="container">
         <!-- HEADER ZONE -->
         <header class="app-header">
@@ -34,10 +37,10 @@
                 <i class="fa-solid fa-shield-halved logo-icon"></i>
                 <div class="logo-text">
                     <h1>AOV DRAFTER</h1>
-                    <span>Hệ Chuyên Gia Gợi Ý Cấm Chọn</span>
+                    <span>Hệ thống hỗ trợ ban/pick</span>
                 </div>
             </div>
-            
+
             <!-- CENTRAL CONTROL BAR -->
             <div id="central-status-bar" class="status-bar">
                 <div class="phase-badge" id="current-phase">ĐANG KHỞI TẠO</div>
@@ -45,7 +48,7 @@
                     <span id="status-text">Đang tải cơ sở dữ liệu...</span>
                 </div>
             </div>
-            
+
             <div class="header-actions">
                 <div class="theme-toggle-group" id="theme-toggle-group">
                     <button class="theme-btn" data-theme-val="light" title="Giao diện Sáng">
@@ -75,7 +78,7 @@
                     <h2>ĐỘI XANH</h2>
                     <span class="team-badge blue">BLUE TEAM</span>
                 </div>
-                
+
                 <!-- Horizontal Ban Slots -->
                 <div class="ban-section">
                     <div class="ban-title">CẤM (BANS)</div>
@@ -87,7 +90,7 @@
                         <div class="ban-slot blue-ban-slot" data-slot="4"></div>
                     </div>
                 </div>
-                
+
                 <!-- Vertical Pick Slots -->
                 <div class="pick-section">
                     <div class="pick-title">CHỌN (PICKS)</div>
@@ -109,7 +112,8 @@
                         <div class="search-box">
                             <i class="fa-solid fa-magnifying-glass search-icon"></i>
                             <input type="text" id="search-input" placeholder="Tìm tên tướng..." autocomplete="off">
-                            <button id="clear-search-btn" class="clear-search-btn"><i class="fa-solid fa-xmark"></i></button>
+                            <button id="clear-search-btn" class="clear-search-btn"><i
+                                    class="fa-solid fa-xmark"></i></button>
                         </div>
                         <div class="role-filters" id="role-filters">
                             <button class="filter-tab active" data-role="all" id="btn-filter-all">Tất cả</button>
@@ -120,7 +124,7 @@
                             <button class="filter-tab" data-role="SP" id="btn-filter-sp">Trợ Thủ (SP)</button>
                         </div>
                     </div>
-                    
+
                     <!-- Lưới tướng -->
                     <div class="hero-grid-container">
                         <div class="hero-grid" id="hero-grid">
@@ -132,7 +136,8 @@
                 <!-- RECOMMENDATION & TEAM STATS PANEL -->
                 <div class="panel recommendation-panel">
                     <div class="rec-header">
-                        <h3 id="recommendation-title"><i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI XANH)</h3>
+                        <h3 id="recommendation-title"><i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý
+                            TƯỚNG TỐI ƯU (ĐỘI XANH)</h3>
                         <span class="role-target" id="missing-roles-text">Vị trí khuyên chọn: Đang tính toán...</span>
                     </div>
                     <div class="rec-filters" id="rec-role-filters">
@@ -143,19 +148,19 @@
                         <button class="rec-filter-tab" data-role="AD">AD</button>
                         <button class="rec-filter-tab" data-role="SP">SP</button>
                     </div>
-                    
+
                     <div class="recommendations-container" id="recommendations-container">
                         <div class="rec-list" id="recommendation-list">
                             <!-- Top 3 recommendations injected by JavaScript -->
                         </div>
                     </div>
-                    
+
                     <!-- TEAM COMPARISON AND STATS -->
                     <div class="team-stats-box" id="team-stats">
                         <div class="stats-header">
                             <h4><i class="fa-solid fa-chart-bar stats-icon"></i> ĐÁNH GIÁ SỨC MẠNH ĐỘI HÌNH</h4>
                         </div>
-                        
+
                         <div class="overall-progress-bars">
                             <div class="team-bar-container blue-team-bar">
                                 <div class="bar-labels">
@@ -166,7 +171,7 @@
                                     <div class="progress-fill" id="blue-progress-bar" style="width: 0%"></div>
                                 </div>
                             </div>
-                            
+
                             <div class="team-bar-container red-team-bar">
                                 <div class="bar-labels">
                                     <span>Đội Đỏ</span>
@@ -215,7 +220,7 @@
                     <h2>ĐỘI ĐỎ</h2>
                     <span class="team-badge red">RED TEAM</span>
                 </div>
-                
+
                 <!-- Horizontal Ban Slots -->
                 <div class="ban-section">
                     <div class="ban-title">CẤM (BANS)</div>
@@ -227,7 +232,7 @@
                         <div class="ban-slot red-ban-slot" data-slot="4"></div>
                     </div>
                 </div>
-                
+
                 <!-- Vertical Pick Slots -->
                 <div class="pick-section">
                     <div class="pick-title">CHỌN (PICKS)</div>
@@ -241,7 +246,7 @@
                 </div>
             </section>
         </main>
-        
+
         <!-- Draft Overlay for Completion -->
         <div id="completion-overlay" class="completion-overlay hidden">
             <div class="overlay-content">
@@ -259,4 +264,5 @@
     <!-- Main JavaScript Logic -->
     <script src="app.js"></script>
 </body>
+
 </html>
