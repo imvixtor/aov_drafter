@@ -1382,13 +1382,18 @@ html[data-theme="light"] .rec-filter-tab.active {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 240, 255, 0.05);
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     text-align: center;
-    max-width: 480px;
-    width: 90%;
+    max-width: 850px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
     transform: translateY(20px);
     transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .completion-overlay:not(.hidden) .overlay-content {
@@ -1811,4 +1816,205 @@ html[data-theme="light"] .slider {
 
 html[data-theme="light"] .slider:before {
     background-color: var(--text-muted);
+}
+
+/* --- OVERLAY POST-DRAFT ANALYSIS --- */
+.overlay-analysis {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+    text-align: left;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.analysis-team {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blue-team-title {
+    color: var(--blue-primary);
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.red-team-title {
+    color: var(--red-primary);
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.1);
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.team-stat-bars {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.analysis-stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.analysis-stat-row .stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    width: 80px;
+}
+
+.analysis-stat-row .stat-track {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.analysis-stat-row .stat-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--blue-primary);
+    box-shadow: 0 0 8px var(--blue-glow);
+}
+
+.red-analysis .stat-fill {
+    background: var(--red-primary);
+    box-shadow: 0 0 8px var(--red-glow);
+}
+
+.analysis-stat-row .stat-val {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-primary);
+    width: 35px;
+    text-align: right;
+}
+
+.team-tactics {
+    margin-bottom: 20px;
+}
+
+.team-tactics h5, .team-lane-notes h5, .matchup-warnings h5 {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.team-tactics h6 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
+}
+
+.team-tactics p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.team-lane-notes ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.matchup-warnings {
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.matchup-warnings.empty {
+    background: rgba(16, 185, 129, 0.04);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.matchup-warnings.empty h5 {
+    color: #10b981;
+}
+
+.matchup-warnings h5 {
+    color: var(--red-primary);
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.matchup-warnings ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.matchup-warnings li strong {
+    color: var(--text-primary);
+}
+
+/* Light Theme Styling for Analysis */
+html[data-theme="light"] .overlay-analysis {
+    border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .analysis-team {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+html[data-theme="light"] .analysis-stat-row .stat-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .matchup-warnings {
+    background: rgba(239, 68, 68, 0.03);
+    border-color: rgba(239, 68, 68, 0.1);
+}
+
+html[data-theme="light"] .matchup-warnings.empty {
+    background: rgba(16, 185, 129, 0.03);
+    border-color: rgba(16, 185, 129, 0.1);
 }

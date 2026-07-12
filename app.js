@@ -6374,8 +6374,12 @@ function calculateSuggestions(teamType = "blue") {
         pickedHeroes.forEach(friendly => {
             const blockCounter = friendly.counters && friendly.counters.find(c => c.id === hero.id);
             if (blockCounter) {
-                score += 15;
-                reasons.push({ points: 15, text: `Cướp bài/Bảo vệ đồng đội: Chọn ${hero.name} chặn đối phương lấy để khắc chế ${friendly.name}` });
+                // If the enemy team has already picked a hero for this candidate's main role, the block pick is nullified!
+                const enemyHasFilledRole = enemyPickedHeroes.some(e => e.main_role === hero.main_role);
+                if (!enemyHasFilledRole) {
+                    score += 15;
+                    reasons.push({ points: 15, text: `Cướp bài/Bảo vệ đồng đội: Chọn ${hero.name} chặn đối phương lấy để khắc chế ${friendly.name}` });
+                }
             }
         });
         
@@ -7114,8 +7118,236 @@ function updateThemeToggleUI(themeSetting) {
     });
 }
 
+// --- 8. POST-DRAFT ANALYSIS ENGINE ---
+function getTeamStats(pickedIds) {
+    const heroes = pickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
+    if (heroes.length === 0) return { damage: 0, tankiness: 0, mobility: 0, teamfight: 0, split_push: 0 };
+    
+    let total = { damage: 0, tankiness: 0, mobility: 0, teamfight: 0, split_push: 0 };
+    heroes.forEach(h => {
+        total.damage += h.attributes.damage;
+        total.tankiness += h.attributes.tankiness;
+        total.mobility += h.attributes.mobility;
+        total.teamfight += h.attributes.teamfight;
+        total.split_push += h.attributes.split_push;
+    });
+    
+    const len = heroes.length;
+    return {
+        damage: (total.damage / len).toFixed(1),
+        tankiness: (total.tankiness / len).toFixed(1),
+        mobility: (total.mobility / len).toFixed(1),
+        teamfight: (total.teamfight / len).toFixed(1),
+        split_push: (total.split_push / len).toFixed(1)
+    };
+}
+
+function getTactics(stats) {
+    const dmg = parseFloat(stats.damage);
+    const tnk = parseFloat(stats.tankiness);
+    const mob = parseFloat(stats.mobility);
+    const tf = parseFloat(stats.teamfight);
+    const sp = parseFloat(stats.split_push);
+    
+    if (tnk >= 3.2 && tf >= 3.2) {
+        return {
+            title: "Giao tranh tổng & Bảo kê chủ lực",
+            desc: "Đội hình sở hữu lượng chống chịu và hiệu ứng khống chế diện rộng dồi dào. Nên chủ động tổ chức các pha giao tranh tổng ở hang Rồng/Tà Thần, giữ cự ly đội hình để dàn chắn phía trước bảo kê tối đa cho xạ thủ/pháp sư phía sau xả sát thương."
+        };
+    }
+    if (mob >= 3.2 && dmg >= 3.2) {
+        return {
+            title: "Bắt lẻ & Kéo giãn đội hình",
+            desc: "Đội hình có độ cơ động rất cao và sát thương bùng nổ mạnh. Tránh giao tranh trực diện 5v5 khi chưa kéo máu đối phương. Hãy ưu tiên đẩy đường nhanh, rình rập trong bụi cỏ để bắt lẻ các mục tiêu đi lạc nhờ tốc độ tiếp cận nhanh chóng."
+        };
+    }
+    if (sp >= 3.2) {
+        return {
+            title: "Đẩy lẻ & Kiểm soát mục tiêu",
+            desc: "Có các quân bài đẩy lẻ mạnh mẽ. Nên phân chia đội hình theo dạng 4-1 hoặc 1-3-1, tận dụng khả năng solo đường mạnh để tạo áp lực trụ đối phương, ép đối thủ phải chia người đối phó rồi ăn các mục tiêu lớn."
+        };
+    }
+    return {
+        title: "Đội hình cân bằng tiêu chuẩn",
+        desc: "Đội hình có sự cân bằng giữa sát thương và chống chịu. Vận hành theo trục Rừng - Mid - SP để kiểm soát sông và hỗ trợ hai đường cánh. Hãy giao tranh quanh các mục tiêu lớn khi đã thiết lập đầy đủ tầm nhìn."
+    };
+}
+
+function getLaneNotes(picksSelf, picksEnemy) {
+    const notes = [];
+    const heroesSelf = picksSelf.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
+    
+    heroesSelf.forEach(hero => {
+        const selfCountered = hero.counters && hero.counters.find(c => picksEnemy.includes(c.id));
+        const enemyHeroes = picksEnemy.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
+        let countersSomeone = null;
+        for (let enemy of enemyHeroes) {
+            if (enemy.counters && enemy.counters.some(c => c.id === hero.id)) {
+                countersSomeone = enemy;
+                break;
+            }
+        }
+        
+        let noteText = "";
+        if (selfCountered) {
+            const counterHero = HERO_DATABASE.find(h => h.id === selfCountered.id);
+            noteText = `<strong>[${translateRole(hero.main_role)}] ${hero.name}</strong>: Bị khắc chế bởi ${counterHero.name}. Cần lùi sâu giữ vị trí trong combat, tránh solo đường.`;
+        } else if (countersSomeone) {
+            noteText = `<strong>[${translateRole(hero.main_role)}] ${hero.name}</strong>: Khắc chế cứng ${countersSomeone.name}. Chủ động áp sát đè đường và nhắm gank mục tiêu này.`;
+        } else {
+            switch (hero.main_role) {
+                case "Mid":
+                    noteText = `<strong>[Mid] ${hero.name}</strong>: Dọn lính nhanh, di chuyển sông kiểm soát tầm nhìn và đảo gank hai cánh.`;
+                    break;
+                case "Jungle":
+                    noteText = `<strong>[Rừng] ${hero.name}</strong>: Đảm bảo tiến độ farm, ăn mục tiêu lớn và tổ chức gank đường cánh.`;
+                    break;
+                case "AD":
+                    noteText = `<strong>[AD] ${hero.name}</strong>: Farm an toàn đầu trận, giữ vị trí sau lưng đấu sĩ/đỡ đòn xả sát thương.`;
+                    break;
+                case "SP":
+                    noteText = `<strong>[SP] ${hero.name}</strong>: Kiểm soát bụi cỏ lấy tầm nhìn, bảo kê xạ thủ và mở giao tranh.`;
+                    break;
+                case "Top":
+                    noteText = `<strong>[Top] ${hero.name}</strong>: Tập trung đẩy lính đường cánh ép trụ, sẵn sàng di chuyển hỗ trợ đồng đội.`;
+                    break;
+                default:
+                    noteText = `<strong>[${translateRole(hero.main_role)}] ${hero.name}</strong>: Phối hợp cùng đồng đội và phát huy tối đa chất tướng.`;
+            }
+        }
+        notes.push(noteText);
+    });
+    return notes;
+}
+
+function getMatchupWarnings(picksA, picksB, teamAName, teamBName) {
+    const warnings = [];
+    const heroesA = picksA.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
+    
+    heroesA.forEach(a => {
+        const counter = a.counters && a.counters.find(c => picksB.includes(c.id));
+        if (counter) {
+            const counterHero = HERO_DATABASE.find(h => h.id === counter.id);
+            warnings.push(`<strong>${a.name}</strong> (${teamAName}) bị khắc chế mạnh bởi <strong>${counterHero.name}</strong> (${teamBName}): ${counter.reason}`);
+        }
+    });
+    return warnings;
+}
+
+function renderStatBar(label, value) {
+    const pct = (parseFloat(value) / 5) * 100;
+    return `
+        <div class="analysis-stat-row">
+            <span class="stat-label">${label}</span>
+            <div class="stat-track">
+                <div class="stat-fill" style="width: ${pct}%"></div>
+            </div>
+            <span class="stat-val">${value}/5</span>
+        </div>
+    `;
+}
+
+function generateDraftAnalysis() {
+    const container = document.getElementById("overlay-analysis");
+    if (!container) return;
+    
+    const bluePicks = state.picksBlue.filter(Boolean);
+    const redPicks = state.picksRed.filter(Boolean);
+    
+    const statsBlue = getTeamStats(bluePicks);
+    const statsRed = getTeamStats(redPicks);
+    
+    const tacticsBlue = getTactics(statsBlue);
+    const tacticsRed = getTactics(statsRed);
+    
+    const laneNotesBlue = getLaneNotes(bluePicks, redPicks);
+    const laneNotesRed = getLaneNotes(redPicks, bluePicks);
+    
+    const warningsBlue = getMatchupWarnings(bluePicks, redPicks, "Đội Xanh", "Đội Đỏ");
+    const warningsRed = getMatchupWarnings(redPicks, bluePicks, "Đội Đỏ", "Đội Xanh");
+    const allWarnings = [...warningsBlue, ...warningsRed];
+    
+    let warningsHtml = "";
+    if (allWarnings.length > 0) {
+        warningsHtml = `
+            <div class="matchup-warnings">
+                <h5><i class="fa-solid fa-triangle-exclamation"></i> Cảnh Báo Khắc Chế Cần Lưu Ý</h5>
+                <ul>
+                    ${allWarnings.map(w => `<li>${w}</li>`).join("")}
+                </ul>
+            </div>
+        `;
+    } else {
+        warningsHtml = `
+            <div class="matchup-warnings empty">
+                <h5><i class="fa-solid fa-circle-check"></i> Cảnh Báo Khắc Chế</h5>
+                <p>Không có mối đe dọa khắc chế trực tiếp nghiêm trọng nào giữa hai đội hình.</p>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = `
+        <div class="analysis-grid">
+            <!-- ĐỘI XANH -->
+            <div class="analysis-team blue-analysis">
+                <h4 class="blue-team-title"><i class="fa-solid fa-shield-halved"></i> ĐỘI XANH</h4>
+                
+                <div class="team-stat-bars">
+                    ${renderStatBar("Sát thương", statsBlue.damage)}
+                    ${renderStatBar("Chống chịu", statsBlue.tankiness)}
+                    ${renderStatBar("Cơ động", statsBlue.mobility)}
+                    ${renderStatBar("Giao tranh", statsBlue.teamfight)}
+                    ${renderStatBar("Đẩy lẻ", statsBlue.split_push)}
+                </div>
+                
+                <div class="team-tactics">
+                    <h5><i class="fa-solid fa-compass"></i> Hướng Vận Hành</h5>
+                    <h6>Lối chơi chính: ${tacticsBlue.title}</h6>
+                    <p>${tacticsBlue.desc}</p>
+                </div>
+                
+                <div class="team-lane-notes">
+                    <h5><i class="fa-solid fa-list-check"></i> Lưu Ý Từng Vị Trí</h5>
+                    <ul>
+                        ${laneNotesBlue.map(n => `<li>${n}</li>`).join("")}
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- ĐỘI ĐỎ -->
+            <div class="analysis-team red-analysis">
+                <h4 class="red-team-title"><i class="fa-solid fa-shield-halved"></i> ĐỘI ĐỎ</h4>
+                
+                <div class="team-stat-bars">
+                    ${renderStatBar("Sát thương", statsRed.damage)}
+                    ${renderStatBar("Chống chịu", statsRed.tankiness)}
+                    ${renderStatBar("Cơ động", statsRed.mobility)}
+                    ${renderStatBar("Giao tranh", statsRed.teamfight)}
+                    ${renderStatBar("Đẩy lẻ", statsRed.split_push)}
+                </div>
+                
+                <div class="team-tactics">
+                    <h5><i class="fa-solid fa-compass"></i> Hướng Vận Hành</h5>
+                    <h6>Lối chơi chính: ${tacticsRed.title}</h6>
+                    <p>${tacticsRed.desc}</p>
+                </div>
+                
+                <div class="team-lane-notes">
+                    <h5><i class="fa-solid fa-list-check"></i> Lưu Ý Từng Vị Trí</h5>
+                    <ul>
+                        ${laneNotesRed.map(n => `<li>${n}</li>`).join("")}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        ${warningsHtml}
+    `;
+}
+
 // Overlay controllers
 function showCompletionOverlay() {
+    generateDraftAnalysis();
     document.getElementById("completion-overlay").classList.remove("hidden");
 }
 
