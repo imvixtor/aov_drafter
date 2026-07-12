@@ -2828,9 +2828,9 @@ function generateSvgAvatar(name, role, tier) {
 }
 
 // --- 6. SCORING LOGIC ENGINE ---
-function calculateSuggestions() {
-    // 1. Identify which roles Blue Team (Đội Xanh) already picked
-    const pickedIds = state.picksBlue.filter(id => id !== null);
+function calculateSuggestions(teamType = "blue") {
+    // 1. Identify which roles our team already picked
+    const pickedIds = teamType === "blue" ? state.picksBlue.filter(id => id !== null) : state.picksRed.filter(id => id !== null);
     const pickedHeroes = pickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
     const pickedRoles = pickedHeroes.map(h => h.main_role);
     
@@ -2857,13 +2857,18 @@ function calculateSuggestions() {
         }
     }
     
-    // Get Red Team picked details
-    const redPickedIds = state.picksRed.filter(id => id !== null);
-    const redPickedHeroes = redPickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
+    // Get Enemy Team picked details
+    const enemyPickedIds = teamType === "blue" ? state.picksRed.filter(id => id !== null) : state.picksBlue.filter(id => id !== null);
+    const enemyPickedHeroes = enemyPickedIds.map(id => HERO_DATABASE.find(h => h.id === id)).filter(Boolean);
     
     // Calculate parameters for team comps
-    const totalRedTankiness = redPickedHeroes.reduce((sum, h) => sum + h.attributes.tankiness, 0);
-    const blueTeamfightAvailable = pickedHeroes.some(h => h.attributes.teamfight >= 4);
+    const totalEnemyTankiness = enemyPickedHeroes.reduce((sum, h) => sum + h.attributes.tankiness, 0);
+    const friendlyTeamfightAvailable = pickedHeroes.some(h => h.attributes.teamfight >= 4);
+    
+    const enemyHighMobility = enemyPickedHeroes.some(h => h.attributes.mobility >= 5);
+    const enemyHighBurst = enemyPickedHeroes.some(h => h.attributes.damage >= 5 && h.main_role === "Mid");
+    
+    const tankShredders = ["hayate", "lauriel", "maloch"];
     
     // 2. Score each candidate
     const scoredCandidates = candidates.map(hero => {
@@ -2885,25 +2890,25 @@ function calculateSuggestions() {
         }
         
         // --- Class Counter (Khắc chế Hệ) ---
-        if (redPickedHeroes.length > 0) {
+        if (enemyPickedHeroes.length > 0) {
             // Tank shredder vs Tanky enemy
-            if (totalRedTankiness >= 7) {
-                if (hero.tags.includes("tank_shredder")) {
+            if (totalEnemyTankiness >= 7) {
+                if (tankShredders.includes(hero.id)) {
                     score += 15;
-                    reasons.push({ points: 15, text: "Khắc chế Đội hình Tank đỏ (có tag Diệt Tank)" });
+                    reasons.push({ points: 15, text: "Khắc chế Đội hình chống chịu cao (Sát thương chuẩn/Bào Tank)" });
                 }
             }
             // Assassin / High Dmg vs Squishy enemy
-            if (totalRedTankiness < 3) {
+            if (totalEnemyTankiness < 3) {
                 if (hero.main_role === "Jungle" || hero.attributes.damage >= 4) {
                     score += 15;
-                    reasons.push({ points: 15, text: "Săn mục tiêu Đội hình yếu máu đỏ (Sát thương lớn)" });
+                    reasons.push({ points: 15, text: "Săn mục tiêu Đội hình yếu máu đối phương (Sát thương lớn)" });
                 }
             }
         }
         
         // --- Hard Counter (Khắc chế Cứng) ---
-        redPickedHeroes.forEach(enemy => {
+        enemyPickedHeroes.forEach(enemy => {
             const counterRule = COUNTERS_MANUAL.find(c => c.counter === hero.id && c.countered === enemy.id);
             if (counterRule) {
                 score += 20;
@@ -2912,9 +2917,41 @@ function calculateSuggestions() {
         });
         
         // --- Synergy (Hiệp lực) ---
-        if (blueTeamfightAvailable && hero.attributes.teamfight >= 4) {
+        if (friendlyTeamfightAvailable && hero.attributes.teamfight >= 4) {
             score += 10;
             reasons.push({ points: 10, text: "Đồng đội giao tranh tổng mạnh (Hiệp lực TF ≥ 4)" });
+        }
+        
+        // --- Composition Structural Balance (Bù đắp cơ cấu) ---
+        const hasMid = pickedHeroes.some(h => h.main_role === "Mid");
+        const hasAD = pickedHeroes.some(h => h.main_role === "AD");
+        const hasFrontline = pickedHeroes.some(h => (h.main_role === "SP" || h.main_role === "Top") && h.attributes.tankiness >= 4);
+        
+        if (!hasMid && hero.main_role === "Mid") {
+            score += 15;
+            reasons.push({ points: 15, text: "Bổ sung nguồn Sát thương Phép chính cho đội (Pháp Sư)" });
+        }
+        if (!hasAD && hero.main_role === "AD") {
+            score += 15;
+            reasons.push({ points: 15, text: "Bổ sung nguồn Sát thương Vật lý chủ lực (Xạ Thủ)" });
+        }
+        if (!hasFrontline && hero.attributes.tankiness >= 4 && (hero.main_role === "SP" || hero.main_role === "Top")) {
+            score += 15;
+            reasons.push({ points: 15, text: "Bổ sung tướng Đỡ đòn / Tiên phong chống chịu gánh chịu sát thương" });
+        }
+        
+        // --- Dynamic Counter-Drafting (Khắc chế động) ---
+        if (enemyHighMobility && hero.attributes.teamfight >= 4 && (hero.main_role === "SP" || hero.main_role === "Mid")) {
+            score += 15;
+            reasons.push({ points: 15, text: "Khống chế/Giao tranh mạnh chống càn quét vs Tướng cơ động địch" });
+        }
+        if (enemyHighBurst && hero.main_role === "SP" && hero.attributes.tankiness >= 4) {
+            score += 15;
+            reasons.push({ points: 15, text: "Đỡ đòn bảo kê giảm sát thương từ nguồn sốc dame phép của địch" });
+        }
+        if (hero.ban_rate >= 15.0) {
+            score += 10;
+            reasons.push({ points: 10, text: "Tranh bài: Tướng Hot Meta cạnh tranh cao (Ban rate ≥ 15%)" });
         }
         
         return {
@@ -2929,7 +2966,7 @@ function calculateSuggestions() {
     scoredCandidates.sort((a, b) => b.totalScore - a.totalScore);
     
     return {
-        topSuggestions: scoredCandidates.slice(0, 3),
+        topSuggestions: scoredCandidates.slice(0, 6),
         missingRoles: missingRoles
     };
 }
@@ -3218,38 +3255,49 @@ function renderRecommendationsAndStats() {
     recList.innerHTML = "";
     
     const missingRolesText = document.getElementById("missing-roles-text");
+    const recTitle = document.getElementById("recommendation-title");
     
-    // Get recommendations for Blue Team
-    const { topSuggestions, missingRoles } = calculateSuggestions();
+    const isPickPhase = state.currentTurnIndex >= 10 && state.currentTurnIndex < 20;
+    const activeTeam = isPickPhase ? TURN_SEQUENCE[state.currentTurnIndex].team : "blue";
+    
+    // Update Title depending on active team
+    if (activeTeam === "blue") {
+        recTitle.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI XANH)`;
+    } else {
+        recTitle.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI ĐỎ)`;
+    }
+    
+    // Get recommendations for active team
+    const { topSuggestions, missingRoles } = calculateSuggestions(activeTeam);
+    
+    const teamFull = activeTeam === "blue" ? state.picksBlue.filter(Boolean).length === 5 : state.picksRed.filter(Boolean).length === 5;
     
     // Format missing roles text
     if (state.currentTurnIndex < 10) {
         missingRolesText.textContent = "Giai đoạn Cấm (Gợi ý chưa mở)";
-    } else if (state.picksBlue.filter(Boolean).length === 5) {
+    } else if (teamFull) {
         missingRolesText.textContent = "Đội hình hoàn tất!";
     } else {
         missingRolesText.textContent = "Vị trí thiếu: " + missingRoles.map(translateRole).join(", ");
     }
     
-    // Display recommendations only if in Pick Phase and Blue Team isn't full
-    const isPickPhase = state.currentTurnIndex >= 10 && state.currentTurnIndex < 20;
     const isBluePickTurn = isPickPhase && TURN_SEQUENCE[state.currentTurnIndex].team === "blue";
-    const teamFull = state.picksBlue.filter(Boolean).length === 5;
+    const isRedPickTurn = isPickPhase && TURN_SEQUENCE[state.currentTurnIndex].team === "red";
     
     if (!isPickPhase || teamFull) {
         const emptyState = document.createElement("div");
         emptyState.className = "rec-empty-state";
         if (teamFull) {
-            emptyState.innerHTML = `<i class="fa-solid fa-circle-check"></i>Đội hình Đội Xanh đã chọn đầy đủ 5 vị trí.`;
+            emptyState.innerHTML = `<i class="fa-solid fa-circle-check"></i> Đội hình ${activeTeam === "blue" ? "Đội Xanh" : "Đội Đỏ"} đã chọn đầy đủ 5 vị trí.`;
         } else {
-            emptyState.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i>Gợi ý sẽ tự động tính toán khi bước vào lượt Chọn (Pick) của Đội Xanh.`;
+            emptyState.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> Gợi ý sẽ tự động tính toán khi bước vào lượt Chọn (Pick) của một trong hai đội.`;
         }
         recList.appendChild(emptyState);
     } else {
         if (topSuggestions.length === 0) {
             const emptyState = document.createElement("div");
             emptyState.className = "rec-empty-state";
-            emptyState.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>Không tìm thấy tướng phù hợp còn trống trong bể tướng.`;
+            emptyState.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Không tìm thấy tướng phù hợp còn trống trong bể tướng.`;
             recList.appendChild(emptyState);
         } else {
             topSuggestions.forEach(({ hero, totalScore, baseScore, reasons }) => {
@@ -3306,8 +3354,9 @@ function renderRecommendationsAndStats() {
                 const selectBtn = document.createElement("button");
                 selectBtn.className = "btn-rec-select";
                 selectBtn.innerHTML = `<i class="fa-solid fa-plus"></i> Chọn`;
-                // Disable quick select if it is red team pick turn
-                if (!isBluePickTurn) {
+                // Disable quick select if it is not the active pick turn
+                const canSelect = (activeTeam === "blue" && isBluePickTurn) || (activeTeam === "red" && isRedPickTurn);
+                if (!canSelect) {
                     selectBtn.disabled = true;
                     selectBtn.style.opacity = 0.5;
                     selectBtn.style.cursor = "not-allowed";
