@@ -8,8 +8,11 @@ const HERO_DATABASE = [
         "id": "airi",
         "name": "Airi",
         "main_role": "Top",
-        "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/04999ff87145b9005694ffd78e1530a660017059a8fc11.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Airi-100x100.webp",
+        "win_rate": 45.2,
+        "pick_rate": 10.9,
+        "ban_rate": 3.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -18,6 +21,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -25,8 +29,11 @@ const HERO_DATABASE = [
         "id": "aleister",
         "name": "Aleister",
         "main_role": "Mid",
-        "tier": "B",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/15600.jpg",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aleister-100x100.webp",
+        "win_rate": 49,
+        "pick_rate": 6.8,
+        "ban_rate": 8.2,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -35,24 +42,28 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "alice",
         "name": "Alice",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b9dd8e24c0fbad107475f6e31f5e36365847d373da15b1.png",
+        "main_role": "SP",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Alice.webp",
+        "win_rate": 48.5,
+        "pick_rate": 2.9,
+        "ban_rate": 1.9,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -60,8 +71,11 @@ const HERO_DATABASE = [
         "id": "allain",
         "name": "Allain",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3aa1f0f335f87801117dbfa1d69b072b5ef1f1c297fe21.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Allain-100x100.webp",
+        "win_rate": 48.3,
+        "pick_rate": 3.7,
+        "ban_rate": 3.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -70,6 +84,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -78,7 +93,10 @@ const HERO_DATABASE = [
         "name": "Amily",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/65b8d8e674af00ee4ecbb4030e8fac385b88ea13824d31.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Amily-100x100.webp",
+        "win_rate": 49.8,
+        "pick_rate": 8.6,
+        "ban_rate": 4,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -87,23 +105,28 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "annette",
         "name": "Annette",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/17f4f562b9121128b4aff9e7b41644185f041e77964551.jpg",
+        "main_role": "SP",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Annette-100x100.webp",
+        "win_rate": 57.9,
+        "pick_rate": 13.3,
+        "ban_rate": 6.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -112,7 +135,10 @@ const HERO_DATABASE = [
         "name": "Aoi",
         "main_role": "Jungle",
         "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f1db425eba8ea88e5d4d8427c1706bcf6100183de1cc11.jpeg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aoi-100x100.webp",
+        "win_rate": 51.1,
+        "pick_rate": 8.9,
+        "ban_rate": 22.7,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -121,6 +147,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
@@ -128,8 +155,11 @@ const HERO_DATABASE = [
         "id": "arduin",
         "name": "Arduin",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8ac7305489de39cfaa10eb13f5a7824559bb7d0c7f2cc1.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arduin.webp",
+        "win_rate": 46.6,
+        "pick_rate": 1.5,
+        "ban_rate": 1.2,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -138,6 +168,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -146,7 +177,10 @@ const HERO_DATABASE = [
         "name": "Arthur",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/06/Honeyview_Arthur_111-e1718875297358.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arthur-100x100.webp",
+        "win_rate": 49.9,
+        "pick_rate": 7.3,
+        "ban_rate": 3.9,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -155,49 +189,19 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "arum",
         "name": "Arum",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7faf7c96faeb8721b936e323becb57265afea9c3c8b281.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "astrid",
-        "name": "Astrid",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/91a969152f4340611e12e4eeb96a9aa259e021a48fbe91.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ata",
-        "name": "Ata",
         "main_role": "SP",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/71f7a36c0dd250ce0affeffcf14360f45e57c0420b4b61.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Arum.webp",
+        "win_rate": 45.5,
+        "pick_rate": 2,
+        "ban_rate": 2.6,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -206,16 +210,19 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
             "crawled"
         ]
     },
     {
-        "id": "aya",
-        "name": "Aya",
+        "id": "astrid",
+        "name": "Astrid",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d4510fa53f153c5e259543597c96bb88658d3efcbcd0f1.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Astrid.webp",
+        "win_rate": 46.7,
+        "pick_rate": 1.7,
+        "ban_rate": 1.3,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -224,6 +231,49 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ata",
+        "name": "Ata",
+        "main_role": "Top",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ata-100x100.webp",
+        "win_rate": 47.2,
+        "pick_rate": 3.6,
+        "ban_rate": 2.3,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "aya",
+        "name": "Aya",
+        "main_role": "SP",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Aya-100x100.webp",
+        "win_rate": 53.3,
+        "pick_rate": 10.5,
+        "ban_rate": 9.4,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -231,8 +281,11 @@ const HERO_DATABASE = [
         "id": "azzenka",
         "name": "Azzen'Ka",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/12700_B51-1.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/AzzenKa-100x100.webp",
+        "win_rate": 48.2,
+        "pick_rate": 3.4,
+        "ban_rate": 1.8,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -241,7 +294,7 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
@@ -250,7 +303,10 @@ const HERO_DATABASE = [
         "name": "Baldum",
         "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e751e70db18557783c2d23c9e5383e095b6bb947482b11.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Baldum-100x100.webp",
+        "win_rate": 56.3,
+        "pick_rate": 5.6,
+        "ban_rate": 1.3,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -259,6 +315,7 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -266,8 +323,11 @@ const HERO_DATABASE = [
         "id": "bijan",
         "name": "Bijan",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/856d30cb10953b9480dce5c5470bf81c658d50d87305a1.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bijan.webp",
+        "win_rate": 53,
+        "pick_rate": 15.4,
+        "ban_rate": 10.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -276,6 +336,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -283,8 +344,11 @@ const HERO_DATABASE = [
         "id": "billow",
         "name": "Billow",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2025/01/59900-2.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Billow-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 26.7,
+        "ban_rate": 19.3,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -293,6 +357,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -301,7 +366,10 @@ const HERO_DATABASE = [
         "name": "Biron",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/10/biron-artwork-1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Biron-100x100.webp",
+        "win_rate": 39.6,
+        "pick_rate": 16.8,
+        "ban_rate": 4.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -310,6 +378,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -318,7 +387,10 @@ const HERO_DATABASE = [
         "name": "Bolt Baron",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/11/bolt-baron-225.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/02/Bolt-Baron-100x100.webp",
+        "win_rate": 51.6,
+        "pick_rate": 5.3,
+        "ban_rate": 4.8,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -327,84 +399,40 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "bonnie",
         "name": "Bonnie",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a2ed1b1815df9c719e4f9b4be5eb3a74658d4cd7d3ef61.jpg",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bonnie-100x100.webp",
+        "win_rate": 54.7,
+        "pick_rate": 15.6,
+        "ban_rate": 24.2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "bright",
         "name": "Bright",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/0045a9d59dc140647f4fa67b446c732c5fc55919650441.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "brunhilda",
-        "name": "Brunhilda",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/194741793e21d4392965d4d63515e78b5d6fa738d07e61.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "butterfly",
-        "name": "Butterfly",
-        "main_role": "Jungle",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/769a9fe6cb9b9725127a094bb6dd36545f0ed6543592e1.jpg",
-        "attributes": {
-            "damage": 5,
-            "tankiness": 2,
-            "mobility": 5,
-            "teamfight": 3,
-            "split_push": 4
-        },
-        "tags": [
-            "assassins",
-            "crawled"
-        ]
-    },
-    {
-        "id": "capheny",
-        "name": "Capheny",
         "main_role": "AD",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5c3212f3d7a6f95ad04a309d4d1f340a5ca5c222bda911.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Bright-100x100.webp",
+        "win_rate": 50.3,
+        "pick_rate": 9.9,
+        "ban_rate": 7.1,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -413,6 +441,70 @@ const HERO_DATABASE = [
             "split_push": 3
         },
         "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "butterfly",
+        "name": "Butterfly",
+        "main_role": "Jungle",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Butterfly-100x100.webp",
+        "win_rate": 52,
+        "pick_rate": 15,
+        "ban_rate": 16.8,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
+            "crawled"
+        ]
+    },
+    {
+        "id": "capheny",
+        "name": "Capheny",
+        "main_role": "AD",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Capheny-100x100.webp",
+        "win_rate": 42.9,
+        "pick_rate": 22.1,
+        "ban_rate": 8.1,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "celica",
+        "name": "Celica",
+        "main_role": "AD",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Celica-100x100.webp",
+        "win_rate": 51.2,
+        "pick_rate": 8.6,
+        "ban_rate": 6.8,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -421,7 +513,10 @@ const HERO_DATABASE = [
         "name": "Charlotte",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/07/20600s.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Charlotte-100x100.webp",
+        "win_rate": 50.1,
+        "pick_rate": 7.5,
+        "ban_rate": 8.7,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -430,6 +525,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -437,8 +533,11 @@ const HERO_DATABASE = [
         "id": "chaugnar",
         "name": "Chaugnar",
         "main_role": "SP",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3eb3c69cef807c5706a98cc4b799619b5b3456990e6501.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Chaugnar-100x100.webp",
+        "win_rate": 77.8,
+        "pick_rate": 3.2,
+        "ban_rate": 2,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -447,41 +546,49 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "cresht",
         "name": "Cresht",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/04b0a1140d89b8ef0cd4a655753bbb895c4938662bc9f1.jpg",
+        "main_role": "SP",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Cresht-100x100.webp",
+        "win_rate": 53.9,
+        "pick_rate": 4.6,
+        "ban_rate": 2.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "darcy",
-        "name": "D'Arcy",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/903191ed8212c2c6c91f1f6f0a677a565c6102d8ecf4a1.jpg",
+        "name": "D'arcy",
+        "main_role": "Mid",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Darcy-100x100.webp",
+        "win_rate": 48.7,
+        "pick_rate": 2.2,
+        "ban_rate": 2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
@@ -490,7 +597,10 @@ const HERO_DATABASE = [
         "name": "Dextra",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/38f3158929eb4b95500db65559e52d525fc5244a521d11.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dextra-100x100.webp",
+        "win_rate": 52.6,
+        "pick_rate": 10.5,
+        "ban_rate": 7.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -499,15 +609,19 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
-        "id": "diaochan",
-        "name": "Diaochan",
+        "id": "dieuthuyen",
+        "name": "Điêu Thuyền",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d93ee5059a95c391548419e69b6b9d1a5d2564f4eba891.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dieu-Thuyen-100x100.webp",
+        "win_rate": 50.9,
+        "pick_rate": 5.6,
+        "ban_rate": 3.8,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -516,58 +630,70 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "dirak",
         "name": "Dirak",
-        "main_role": "Top",
+        "main_role": "Mid",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ab0b68ebd2e8df3116d91231ec0e55fc5e16e1f05c8701-1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dirak-100x100.webp",
+        "win_rate": 51,
+        "pick_rate": 9.7,
+        "ban_rate": 9.4,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "dolia",
         "name": "Dolia",
-        "main_role": "Top",
+        "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/07/15900s.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Dolia-100x100.webp",
+        "win_rate": 45.6,
+        "pick_rate": 27.7,
+        "ban_rate": 23.2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "dyadia",
         "name": "Dyadia",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2026/01/SeaTalk_IMG_20260119_104427.jpg",
+        "main_role": "Mid",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/02/Dyadia-100x100.webp",
+        "win_rate": 47.4,
+        "pick_rate": 2.1,
+        "ban_rate": 4.4,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
@@ -576,7 +702,10 @@ const HERO_DATABASE = [
         "name": "Edras",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2025/10/edrashead-2.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/11/edrashead-2-100x100.jpg",
+        "win_rate": 50,
+        "pick_rate": 24.6,
+        "ban_rate": 20.1,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -585,32 +714,19 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "elandorr",
         "name": "Eland'orr",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/060f8e35db2f7fb1be51d7e5bdd1724a5db174d49d9de1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "elsu",
-        "name": "Elsu",
         "main_role": "AD",
-        "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/449789489494c0f108a3db5db3098e585bc98d17e666b1.jpg",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Elandorr-100x100.webp",
+        "win_rate": 47.6,
+        "pick_rate": 29.5,
+        "ban_rate": 49.5,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -619,74 +735,112 @@ const HERO_DATABASE = [
             "split_push": 3
         },
         "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "elsu",
+        "name": "Elsu",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Elsu-100x100.webp",
+        "win_rate": 35.3,
+        "pick_rate": 11.9,
+        "ban_rate": 5.3,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
             "crawled"
         ]
     },
     {
         "id": "enzo",
         "name": "Enzo",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/81d7c827262287ce87639f3bfa048f5a5d149a6d571091.jpg",
+        "main_role": "Jungle",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Enzo-100x100.webp",
+        "win_rate": 42.5,
+        "pick_rate": 14,
+        "ban_rate": 14.2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "erin",
         "name": "Erin",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a1d3b1c36a643cb6d58c704139a2c24d65af7afac34cb1.jpg",
+        "main_role": "AD",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Erin-100x100.webp",
+        "win_rate": 51.5,
+        "pick_rate": 10.6,
+        "ban_rate": 12.2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
             "teamfight": 4,
-            "split_push": 4
+            "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
     {
         "id": "errol",
         "name": "Errol",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5067bb53ba6435e11cc8777645d8de115cc136a9ca3b31.jpg",
+        "main_role": "Jungle",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Errol-100x100.webp",
+        "win_rate": 33.3,
+        "pick_rate": 2.1,
+        "ban_rate": 0.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "fennik",
         "name": "Fennik",
-        "main_role": "Top",
+        "main_role": "AD",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ab3f51a9731ffa085fd56a87139b8a775860e26837e191.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Fennik-100x100.webp",
+        "win_rate": 48.6,
+        "pick_rate": 24.6,
+        "ban_rate": 5.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
             "teamfight": 4,
-            "split_push": 4
+            "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -695,7 +849,10 @@ const HERO_DATABASE = [
         "name": "Florentino",
         "main_role": "Top",
         "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/9527c1cbad1c0656d0a4adf1dcec38e35c25f62d77d671.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Florentino-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 12.6,
+        "ban_rate": 38.3,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -704,6 +861,49 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "flowborn",
+        "name": "Flowborn",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/04/Flowborn-100x100.webp",
+        "win_rate": 47.9,
+        "pick_rate": 2.1,
+        "ban_rate": 4.9,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "flowbornphep",
+        "name": "Flowborn Phép",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/05/flowborn-phep-100x100.webp",
+        "win_rate": 47.9,
+        "pick_rate": 2.1,
+        "ban_rate": 4.9,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -711,8 +911,11 @@ const HERO_DATABASE = [
         "id": "gildur",
         "name": "Gildur",
         "main_role": "SP",
-        "tier": "B",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/10800_B40-1.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Gildur-100x100.webp",
+        "win_rate": 33.3,
+        "pick_rate": 4.2,
+        "ban_rate": 1,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -721,24 +924,28 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "goverra",
         "name": "Goverra",
-        "main_role": "Top",
+        "main_role": "Mid",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2025/07/goverra-1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/07/goverra-11-100x100.webp",
+        "win_rate": 51,
+        "pick_rate": 10.3,
+        "ban_rate": 8.6,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
@@ -747,7 +954,10 @@ const HERO_DATABASE = [
         "name": "Grakk",
         "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/040403525e2882c0e3a6794c31976c89585357ba19a351.png",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Grakk.webp",
+        "win_rate": 52.4,
+        "pick_rate": 9.3,
+        "ban_rate": 4.9,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -756,7 +966,7 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
             "crawled"
         ]
     },
@@ -764,8 +974,11 @@ const HERO_DATABASE = [
         "id": "hayate",
         "name": "Hayate",
         "main_role": "AD",
-        "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/02c8e3d1db8ee8f32913b478884f33e05c8f254a7686f1.jpg",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Hayate-100x100.webp",
+        "win_rate": 53.1,
+        "pick_rate": 34.4,
+        "ban_rate": 22,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -774,23 +987,28 @@ const HERO_DATABASE = [
             "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
     {
         "id": "heino",
         "name": "Heino",
-        "main_role": "Top",
+        "main_role": "Mid",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2025/04/heino-2.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2025/05/heino-1-100x100.webp",
+        "win_rate": 33.3,
+        "pick_rate": 3.2,
+        "ban_rate": 1.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
@@ -799,7 +1017,10 @@ const HERO_DATABASE = [
         "name": "Helen",
         "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e645dfa331fa48d593b33352e1f8030e636e1b3e19b951.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Helen-100x100.webp",
+        "win_rate": 50.9,
+        "pick_rate": 9.1,
+        "ban_rate": 8.1,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -808,100 +1029,19 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "iggy",
         "name": "Iggy",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b4563fbfd5756caeea04b7ef488ee39f60fffd803e9ab1.jpeg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ignis",
-        "name": "Ignis",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a2c0e8ef7742c926f9bb10fbab12b03d5970da7009dc11.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ilumia",
-        "name": "Ilumia",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7ae8bcd437d0787c9f3bb9aa54907ede5ef5e858aff141.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ishar",
-        "name": "Ishar",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1009dcdfe78de2f6bc7fbdaea21cabc05df2198341d451.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "jinnar",
-        "name": "Jinnar",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f3b0dc924b34f76c9265adb57758817a5b752794c417a1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "kahlii",
-        "name": "Kahlii",
         "main_role": "Mid",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fe313975ef498b33a7bf995a05d6f8b75847d42a599181.png",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Iggy-e1724323882340-100x100.webp",
+        "win_rate": 55.1,
+        "pick_rate": 27.4,
+        "ban_rate": 11.1,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -910,67 +1050,124 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ignis",
+        "name": "Ignis",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ignis.webp",
+        "win_rate": 46.5,
+        "pick_rate": 15.1,
+        "ban_rate": 0.7,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ilumia",
+        "name": "Ilumia",
+        "main_role": "Mid",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ilumia-100x100.webp",
+        "win_rate": 51.5,
+        "pick_rate": 11,
+        "ban_rate": 5.1,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ishar",
+        "name": "Ishar",
+        "main_role": "Mid",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ishar-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 6.5,
+        "ban_rate": 4.6,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "jinna",
+        "name": "Jinna",
+        "main_role": "Mid",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Jinna-100x100.webp",
+        "win_rate": 50.8,
+        "pick_rate": 7.3,
+        "ban_rate": 4.8,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "kahlii",
+        "name": "Kahlii",
+        "main_role": "Mid",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kahlii.webp",
+        "win_rate": 47,
+        "pick_rate": 2.3,
+        "ban_rate": 0.8,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "kaine",
         "name": "Kaine",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/bb649e26633a61d78f7147d56c0828c6658d3bb600ae01.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "keera",
-        "name": "Keera",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8491520381ab2a66489a6c5e1ec98e785e452a5c9fd3c1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "kilgroth",
-        "name": "Kil'Groth",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4dd76a3f07965ade3c71b89874b64b935a29291ca4a111.gif",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "kriknak",
-        "name": "Kriknak",
         "main_role": "Jungle",
         "tier": "B",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/0dac2ca73eb28c03de2e43f85e868df458e710b5baeb41.png",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kaine-100x100.webp",
+        "win_rate": 47.4,
+        "pick_rate": 6.3,
+        "ban_rate": 2,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -979,6 +1176,70 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "jungle",
+            "crawled"
+        ]
+    },
+    {
+        "id": "keera",
+        "name": "Keera",
+        "main_role": "Jungle",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Keera-100x100.webp",
+        "win_rate": 37.5,
+        "pick_rate": 19.6,
+        "ban_rate": 15.8,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
+            "crawled"
+        ]
+    },
+    {
+        "id": "kilgroth",
+        "name": "Kil’Groth",
+        "main_role": "Top",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/KilGroth.webp",
+        "win_rate": 51.3,
+        "pick_rate": 9.3,
+        "ban_rate": 7,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "kriknak",
+        "name": "Kriknak",
+        "main_role": "Jungle",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Kriknak.webp",
+        "win_rate": 50.2,
+        "pick_rate": 7.5,
+        "ban_rate": 3.6,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
             "crawled"
         ]
     },
@@ -986,8 +1247,11 @@ const HERO_DATABASE = [
         "id": "krixi",
         "name": "Krixi",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7f04b1fd7f0520dd1ccbd1caad6faf1a5847d3f72e85b1.png",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Krixi.webp",
+        "win_rate": 51.2,
+        "pick_rate": 16,
+        "ban_rate": 19.2,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -996,222 +1260,19 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "krizzix",
         "name": "Krizzix",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a7e49f01ef9804d479cb6537a9b51dee5db6c75c945151.png",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "lauriel",
-        "name": "Lauriel",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/18d4327ac2e366a736a060be082bbbef5943917dab8d81.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "laville",
-        "name": "Laville",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c30059d2dc46ed31b72a4b02aa9e61f75eb136829228d1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "liliana",
-        "name": "Liliana",
-        "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/28b06811cb721a8ecb28d6a1db401e745a9fd3a39ae401.jpg",
-        "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "lindis",
-        "name": "Lindis",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4b2928793044600d4ca60ec95fb31f205a73d88927ca01.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "lorion",
-        "name": "Lorion",
-        "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/dab2c45af3206cd0ac30b450357aa8ce5fc5264d71f451.jpg",
-        "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "lubu",
-        "name": "Lu Bu",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ecbf2434edb2b16cc0d5b286a88ab4335d2565110472b1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "warriors",
-            "crawled"
-        ]
-    },
-    {
-        "id": "lumburr",
-        "name": "Lumburr",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/119dc57d5a3a59b520b93a42301ffb135e7dedbf1c28a1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "maloch",
-        "name": "Maloch",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/752c4c954aa4a8f05a1b0be72aa5dc895c0def4d435aa1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "marja",
-        "name": "Marja",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1303e95b29e784888ae02d97848aed775b2b84e0372771.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "max",
-        "name": "Max",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/18000_B52-1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "mganga",
-        "name": "Mganga",
-        "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/053654897539713c86a745376bc8e8125d25652cf33f01.jpg",
-        "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
-        },
-        "tags": [
-            "mages",
-            "crawled"
-        ]
-    },
-    {
-        "id": "mina",
-        "name": "Mina",
         "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/09d93eb47007482254115f99686694d25847d3e83fdf41.png",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Krizzix.webp",
+        "win_rate": 68.2,
+        "pick_rate": 7.7,
+        "ban_rate": 5.4,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1220,58 +1281,322 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "lauriel",
+        "name": "Lauriel",
+        "main_role": "Mid",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lauriel-100x100.webp",
+        "win_rate": 51.2,
+        "pick_rate": 6.1,
+        "ban_rate": 3.3,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "laville",
+        "name": "Laville",
+        "main_role": "AD",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Laville-100x100.webp",
+        "win_rate": 50.3,
+        "pick_rate": 7.9,
+        "ban_rate": 4.1,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "liliana",
+        "name": "Liliana",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Liliana.webp",
+        "win_rate": 44.6,
+        "pick_rate": 19.6,
+        "ban_rate": 4.8,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "lindis",
+        "name": "Lindis",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lindis.webp",
+        "win_rate": 49.1,
+        "pick_rate": 2.9,
+        "ban_rate": 4,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "lorion",
+        "name": "Lorion",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lorion-100x100.webp",
+        "win_rate": 55.4,
+        "pick_rate": 26,
+        "ban_rate": 18.7,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "lubo",
+        "name": "Lữ Bố",
+        "main_role": "Top",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lu-Bo-100x100.webp",
+        "win_rate": 50.5,
+        "pick_rate": 7.7,
+        "ban_rate": 5.7,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "lumburr",
+        "name": "Lumburr",
+        "main_role": "SP",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Lumburr-100x100.webp",
+        "win_rate": 52.8,
+        "pick_rate": 10.6,
+        "ban_rate": 8.2,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "maloch",
+        "name": "Maloch",
+        "main_role": "Top",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Maloch-100x100.webp",
+        "win_rate": 44.7,
+        "pick_rate": 13.3,
+        "ban_rate": 4.2,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "marja",
+        "name": "Marja",
+        "main_role": "Mid",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Marja-100x100.webp",
+        "win_rate": 57.1,
+        "pick_rate": 36.8,
+        "ban_rate": 39.5,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "max",
+        "name": "Max",
+        "main_role": "Top",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Max.webp",
+        "win_rate": 47.6,
+        "pick_rate": 1.4,
+        "ban_rate": 0.7,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "mganga",
+        "name": "Mganga",
+        "main_role": "Mid",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Mganga-100x100.webp",
+        "win_rate": 44.2,
+        "pick_rate": 18.2,
+        "ban_rate": 12.4,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "mina",
+        "name": "Mina",
+        "main_role": "SP",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Mina.webp",
+        "win_rate": 63,
+        "pick_rate": 9.5,
+        "ban_rate": 11.8,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "ming",
         "name": "Ming",
-        "main_role": "Top",
+        "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/58ba051be8f5ab56c0ea840ceb29c489658d529e847cf1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ming-100x100.webp",
+        "win_rate": 52.5,
+        "pick_rate": 11.2,
+        "ban_rate": 5,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "moren",
         "name": "Moren",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/acqqwc-1.jpg",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/01/moren-100x100.webp",
+        "win_rate": 45.2,
+        "pick_rate": 10.9,
+        "ban_rate": 3.5,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
             "teamfight": 4,
-            "split_push": 4
+            "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
     {
         "id": "murad",
         "name": "Murad",
-        "main_role": "Top",
+        "main_role": "Jungle",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7dba55e7f433ab78ac6bd2cdfeec13495983e122346461.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Murad.webp",
+        "win_rate": 46.3,
+        "pick_rate": 14.4,
+        "ban_rate": 36.1,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
@@ -1280,7 +1605,10 @@ const HERO_DATABASE = [
         "name": "Nakroth",
         "main_role": "Jungle",
         "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c7b840bdacd7e5a8b83af72ccd9ca1815ec64fdc5ffeb1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Nakroth-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 8.4,
+        "ban_rate": 1.6,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -1289,6 +1617,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
@@ -1296,8 +1625,11 @@ const HERO_DATABASE = [
         "id": "natalya",
         "name": "Natalya",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a450850337d6a5d19250b1d1e39692f15eccc530c915e1.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Natalya-100x100.webp",
+        "win_rate": 37.5,
+        "pick_rate": 5.6,
+        "ban_rate": 0.9,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1306,24 +1638,49 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ngokhong",
+        "name": "Ngộ Không",
+        "main_role": "Jungle",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ngo-Khong-100x100.webp",
+        "win_rate": 48.8,
+        "pick_rate": 2.2,
+        "ban_rate": 4.3,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "omega",
         "name": "Omega",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/cb7b811e7978882aefac079de6c93daf5fbcc5716f8ad1.jpg",
+        "main_role": "SP",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Omega-100x100.webp",
+        "win_rate": 44.5,
+        "pick_rate": 3.5,
+        "ban_rate": 1.6,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -1332,7 +1689,10 @@ const HERO_DATABASE = [
         "name": "Omen",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/00a78d4f7222a428cd06b45252f88a565a73df2c56ad81.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Omen.webp",
+        "win_rate": 65.5,
+        "pick_rate": 10.2,
+        "ban_rate": 12.5,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1341,7 +1701,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
-            "mages",
+            "top",
             "crawled"
         ]
     },
@@ -1350,7 +1710,10 @@ const HERO_DATABASE = [
         "name": "Ormarr",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fd2a04f2b129ef58988f2d311eac83e45b6d0919e7d901.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ormarr-100x100.webp",
+        "win_rate": 49.1,
+        "pick_rate": 10.6,
+        "ban_rate": 6.4,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1359,7 +1722,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
-            "warriors",
+            "top",
             "crawled"
         ]
     },
@@ -1367,8 +1730,11 @@ const HERO_DATABASE = [
         "id": "paine",
         "name": "Paine",
         "main_role": "Jungle",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/47861c6d53d72d0dbea2d1dba0b0e0365e8ade6f180931.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Paine-100x100.webp",
+        "win_rate": 52.7,
+        "pick_rate": 17.5,
+        "ban_rate": 15.1,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -1377,7 +1743,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
-            "assassins",
+            "jungle",
             "crawled"
         ]
     },
@@ -1385,8 +1751,11 @@ const HERO_DATABASE = [
         "id": "preyta",
         "name": "Preyta",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f2f8893606262e7c0547c4f47f670995590bf38eabfc81.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Preyta.webp",
+        "win_rate": 47.7,
+        "pick_rate": 3.6,
+        "ban_rate": 1.9,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1395,7 +1764,7 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
@@ -1404,7 +1773,10 @@ const HERO_DATABASE = [
         "name": "Qi",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6da178e8a2c2871aeb856bec0f669ccd5d5684e01acd31.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Qi-100x100.webp",
+        "win_rate": 37.5,
+        "pick_rate": 28.1,
+        "ban_rate": 19.3,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1413,49 +1785,61 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "quillen",
         "name": "Quillen",
-        "main_role": "Top",
+        "main_role": "Jungle",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f6004ed060dcff380fc5b13574986bbc5bf778bc905561.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/01/Quillen.webp",
+        "win_rate": 49.6,
+        "pick_rate": 6.9,
+        "ban_rate": 9.9,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "raz",
         "name": "Raz",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6b79035779ab9195c76d91b3f2e7ca79591e6857831601.jpg",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Raz.webp",
+        "win_rate": 42.9,
+        "pick_rate": 2.5,
+        "ban_rate": 0,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
-        "id": "riktor",
-        "name": "Riktor",
+        "id": "richter",
+        "name": "Richter",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e6e08d2cc322676442cf420e4aefb6d85bd7d7620754b1.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Richter-100x100.webp",
+        "win_rate": 69.6,
+        "pick_rate": 8.1,
+        "ban_rate": 2.2,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1464,186 +1848,19 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "rouie",
         "name": "Rouie",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7f7ce6b3593a8ea52de5fa3be55469f85eb1402d093b71.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "rourke",
-        "name": "Rourke",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/749d47479eb9744d656b5e7c59f213555b1914bf90d291.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "roxie",
-        "name": "Roxie",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/51400-1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ryoma",
-        "name": "Ryoma",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2f3fe854b98e664415c024a1e9f0396259d9b9ddb39921.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "sephera",
-        "name": "Sephera",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/eef053fb25793d536185559e8bf5a82d5c132caaa102e1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "sinestrea",
-        "name": "Sinestrea",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/680ef284724e077237f33cfc2d8fa72d5fa194bad60f31.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "skud",
-        "name": "Skud",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2b128ebef47ab5a8a2ae9d3db754cd585ee5e21149f621.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "slimz",
-        "name": "Slimz",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/122fe2fc229ca42dcbe6946db07ccd435b345a87702a11.png",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "warriors",
-            "crawled"
-        ]
-    },
-    {
-        "id": "stuart",
-        "name": "Stuart",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/aaba7b63f6e2f5577fbb3465925c8026658d3d704767f1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "superman",
-        "name": "Superman",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3310a88f1a679a6940e2f6e0da287c415a02b6ac709e01.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "taara",
-        "name": "Taara",
         "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f69423f533b12cbcd8ab15a7127e1e445e79e0b77e4ec1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Rouie-100x100.webp",
+        "win_rate": 48.4,
+        "pick_rate": 22.5,
+        "ban_rate": 65.8,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1652,7 +1869,217 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "rourke",
+        "name": "Rourke",
+        "main_role": "Jungle",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Rourke.webp",
+        "win_rate": 48.5,
+        "pick_rate": 7.4,
+        "ban_rate": 2.1,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
+            "crawled"
+        ]
+    },
+    {
+        "id": "roxie",
+        "name": "Roxie",
+        "main_role": "Top",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Roxie-100x100.webp",
+        "win_rate": 66.7,
+        "pick_rate": 2.1,
+        "ban_rate": 0.3,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ryoma",
+        "name": "Ryoma",
+        "main_role": "Top",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ryoma.webp",
+        "win_rate": 46.7,
+        "pick_rate": 15.8,
+        "ban_rate": 4.1,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "sephera",
+        "name": "Sephera",
+        "main_role": "Mid",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Sephera-100x100.webp",
+        "win_rate": 49,
+        "pick_rate": 2.3,
+        "ban_rate": 1.2,
+        "attributes": {
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
+        },
+        "tags": [
+            "mid",
+            "crawled"
+        ]
+    },
+    {
+        "id": "sinestrea",
+        "name": "Sinestrea",
+        "main_role": "Jungle",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Sinestrea-100x100.webp",
+        "win_rate": 56.6,
+        "pick_rate": 18.6,
+        "ban_rate": 74.5,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
+            "split_push": 4
+        },
+        "tags": [
+            "jungle",
+            "crawled"
+        ]
+    },
+    {
+        "id": "skud",
+        "name": "Skud",
+        "main_role": "Top",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Skud-100x100.webp",
+        "win_rate": 52,
+        "pick_rate": 17.5,
+        "ban_rate": 12.4,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "slimz",
+        "name": "Slimz",
+        "main_role": "AD",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Slimz.webp",
+        "win_rate": 71.4,
+        "pick_rate": 2.5,
+        "ban_rate": 0,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "stuart",
+        "name": "Stuart",
+        "main_role": "AD",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Stuart-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 27.4,
+        "ban_rate": 10.7,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "superman",
+        "name": "Superman",
+        "main_role": "Top",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Superman.webp",
+        "win_rate": 49,
+        "pick_rate": 2,
+        "ban_rate": 3.4,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "taara",
+        "name": "Taara",
+        "main_role": "SP",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Taara-100x100.webp",
+        "win_rate": 59.7,
+        "pick_rate": 21.8,
+        "ban_rate": 1.9,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -1661,7 +2088,10 @@ const HERO_DATABASE = [
         "name": "Tachi",
         "main_role": "Top",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ea94a6f76e867283974c8ced9d3aa2c5658d3150230cf1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Tachi-100x100.webp",
+        "win_rate": 48.9,
+        "pick_rate": 30.9,
+        "ban_rate": 29.2,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1670,66 +2100,40 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "tamyn",
+        "name": "Tamyn",
+        "main_role": "Top",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2026/07/Tamyn-100x100.webp",
+        "win_rate": 49.7,
+        "pick_rate": 3.6,
+        "ban_rate": 2.2,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "teemee",
         "name": "TeeMee",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d048143eef92ff2734c99f53b46e19db5a4dabef8a0fe1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "teeri",
-        "name": "Teeri",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3499773a79087475e48194e0fd02e27d658d428c2cbe51.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "telannas",
-        "name": "Tel'Annas",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5064b1bbcb8dcac94f88292537d6c35459e96577aa90c1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "thane",
-        "name": "Thane",
         "main_role": "SP",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/71e488144b7dc9f13d40321ce0556efc5847d39f2071a1.png",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/TeeMee.webp",
+        "win_rate": 53.5,
+        "pick_rate": 20.4,
+        "ban_rate": 6.8,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1738,7 +2142,70 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "teeri",
+        "name": "Teeri",
+        "main_role": "AD",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Teeri-100x100.webp",
+        "win_rate": 51.7,
+        "pick_rate": 7.7,
+        "ban_rate": 3.7,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "telannas",
+        "name": "Tel'Annas",
+        "main_role": "AD",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/TelAnnas.webp",
+        "win_rate": 40,
+        "pick_rate": 3.5,
+        "ban_rate": 0,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "thane",
+        "name": "Thane",
+        "main_role": "SP",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Thane.webp",
+        "win_rate": 41.9,
+        "pick_rate": 10.9,
+        "ban_rate": 0.8,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -1746,8 +2213,11 @@ const HERO_DATABASE = [
         "id": "theflash",
         "name": "The Flash",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/dbb8d783c711cc0d2961e72cc8ed122c5ad9685dd58c11.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/The-Flash.webp",
+        "win_rate": 47.5,
+        "pick_rate": 5.8,
+        "ban_rate": 1.1,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1756,24 +2226,28 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "thorne",
         "name": "Thorne",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/dd8031b80a4fc5978cdd4886a65a6eb35f5070fd5d0221.jpg",
+        "main_role": "AD",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Thorne-100x100.webp",
+        "win_rate": 46.2,
+        "pick_rate": 3.2,
+        "ban_rate": 2.4,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
             "teamfight": 4,
-            "split_push": 4
+            "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -1781,8 +2255,11 @@ const HERO_DATABASE = [
         "id": "toro",
         "name": "Toro",
         "main_role": "SP",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ffd2c29391b67831e97a0b16534a65d45ef5921c2bcb41.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Toro-100x100.webp",
+        "win_rate": 48.2,
+        "pick_rate": 39.3,
+        "ban_rate": 25.3,
         "attributes": {
             "damage": 1,
             "tankiness": 5,
@@ -1791,7 +2268,28 @@ const HERO_DATABASE = [
             "split_push": 1
         },
         "tags": [
-            "tanks",
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "trieuvan",
+        "name": "Triệu Vân",
+        "main_role": "Top",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Trieu-Van-100x100.webp",
+        "win_rate": 44.9,
+        "pick_rate": 1.3,
+        "ban_rate": 1.6,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -1800,7 +2298,10 @@ const HERO_DATABASE = [
         "name": "Tulen",
         "main_role": "Mid",
         "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/07210c9e529faa7766ba324bd86b75165a81722f3eab81.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Tulen.webp",
+        "win_rate": 54.4,
+        "pick_rate": 16.9,
+        "ban_rate": 22.2,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -1809,23 +2310,28 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "valhein",
         "name": "Valhein",
-        "main_role": "Top",
+        "main_role": "AD",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4b36c6e5e2d1ce9dd9e2841d2902043c5ee04efeb2f2d1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Valhein-100x100.webp",
+        "win_rate": 42,
+        "pick_rate": 17.5,
+        "ban_rate": 15.2,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
             "teamfight": 4,
-            "split_push": 4
+            "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -1833,18 +2339,20 @@ const HERO_DATABASE = [
         "id": "veera",
         "name": "Veera",
         "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/82a7e1d31f6b20d3faa502e1a215b76c6595119091e7a2-e1718879982854.jpg",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Veera-100x100.webp",
+        "win_rate": 48,
+        "pick_rate": 2.3,
+        "ban_rate": 2.9,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 4,
+            "tankiness": 1,
             "mobility": 3,
             "teamfight": 5,
             "split_push": 2
         },
         "tags": [
-            "mages",
-            "tanks",
+            "mid",
             "crawled"
         ]
     },
@@ -1852,8 +2360,11 @@ const HERO_DATABASE = [
         "id": "veres",
         "name": "Veres",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/46c5f246040b9e750779aa41ffcbeaa15c3f06d63ce241.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Veres-100x100.webp",
+        "win_rate": 53.9,
+        "pick_rate": 17.8,
+        "ban_rate": 24.8,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1862,6 +2373,7 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
@@ -1869,8 +2381,11 @@ const HERO_DATABASE = [
         "id": "violet",
         "name": "Violet",
         "main_role": "AD",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f91d8c95b3b0c11c6fe5b8ac20e48cbd5d25650254d571.jpg",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Violet-100x100.webp",
+        "win_rate": 69.6,
+        "pick_rate": 8.1,
+        "ban_rate": 5,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -1879,6 +2394,7 @@ const HERO_DATABASE = [
             "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
@@ -1886,8 +2402,11 @@ const HERO_DATABASE = [
         "id": "volkath",
         "name": "Volkath",
         "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/219b09a656af5274629409109ea2802d5d9472fe58bd81.jpg",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Volkath.webp",
+        "win_rate": 52.6,
+        "pick_rate": 6.7,
+        "ban_rate": 3.3,
         "attributes": {
             "damage": 3,
             "tankiness": 4,
@@ -1896,152 +2415,40 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
+            "top",
             "crawled"
         ]
     },
     {
         "id": "wiro",
         "name": "Wiro",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/61015ea8f83c0a833833297bb927ccd35be3c4834cd261.jpg",
+        "main_role": "SP",
+        "tier": "C",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wiro.webp",
+        "win_rate": 50,
+        "pick_rate": 2.1,
+        "ban_rate": 0,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
     {
         "id": "wisp",
         "name": "Wisp",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f3a7fe63c79a26ea789064ea3361781f5aec0b6084aa01.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "wonderwoman",
-        "name": "Wonder Woman",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/108ae03944a6aa1eb4313a2baa64efcd5a0e6c1551db11.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "wukong",
-        "name": "Wukong",
-        "main_role": "Mid",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/aea009bf921dd684d19ee76c0c1441215ef5c39d1bd6b1.jpg",
-        "attributes": {
-            "damage": 4,
-            "tankiness": 1,
-            "mobility": 3,
-            "teamfight": 5,
-            "split_push": 2
-        },
-        "tags": [
-            "mages",
-            "crawled"
-        ]
-    },
-    {
-        "id": "xeniel",
-        "name": "Xeniel",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a56369ce162e24700689527a54d89b755a179e8628f391.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "ybneth",
-        "name": "Y'bneth",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/173809566ede28d1fee0731e43a1912c5b98deb97c82f1.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "yan",
-        "name": "Yan",
-        "main_role": "Jungle",
-        "tier": "S",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f9471319a98fac8dce266dc86cd1efea658d4042ae0051.jpg",
-        "attributes": {
-            "damage": 5,
-            "tankiness": 2,
-            "mobility": 5,
-            "teamfight": 3,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "yena",
-        "name": "Yena",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/61fa157164bf9d99e65bf40b802fb5745cfe1cd72c4671.jpg",
-        "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
-        },
-        "tags": [
-            "crawled"
-        ]
-    },
-    {
-        "id": "yorn",
-        "name": "Yorn",
         "main_role": "AD",
         "tier": "B",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/44086d0bc26a170b21038a7cbf9413365c4938b95b2f91.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wisp.webp",
+        "win_rate": 56.9,
+        "pick_rate": 22.8,
+        "ban_rate": 4,
         "attributes": {
             "damage": 5,
             "tankiness": 1,
@@ -2050,15 +2457,82 @@ const HERO_DATABASE = [
             "split_push": 3
         },
         "tags": [
+            "ad",
             "crawled"
         ]
     },
     {
-        "id": "yue",
-        "name": "Yue",
-        "main_role": "Jungle",
+        "id": "wonderwoman",
+        "name": "Wonder Woman",
+        "main_role": "Top",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Wonder-Woman.webp",
+        "win_rate": 52.1,
+        "pick_rate": 10,
+        "ban_rate": 9.2,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "xeniel",
+        "name": "Xeniel",
+        "main_role": "SP",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3ee26051086fee856dc6df74811e9e35658d4142ce14c1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Xeniel.webp",
+        "win_rate": 51.4,
+        "pick_rate": 8.3,
+        "ban_rate": 7.6,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "ybneth",
+        "name": "Y’bneth",
+        "main_role": "SP",
+        "tier": "A",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Ybneth-100x100.webp",
+        "win_rate": 50,
+        "pick_rate": 30.2,
+        "ban_rate": 13.4,
+        "attributes": {
+            "damage": 1,
+            "tankiness": 5,
+            "mobility": 2,
+            "teamfight": 5,
+            "split_push": 1
+        },
+        "tags": [
+            "sp",
+            "crawled"
+        ]
+    },
+    {
+        "id": "yan",
+        "name": "Yan",
+        "main_role": "Jungle",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yan-100x100.webp",
+        "win_rate": 33.3,
+        "pick_rate": 2.1,
+        "ban_rate": 0,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
@@ -2067,16 +2541,61 @@ const HERO_DATABASE = [
             "split_push": 4
         },
         "tags": [
-            "assassins",
+            "jungle",
             "crawled"
         ]
     },
     {
-        "id": "zanis",
-        "name": "Zanis",
-        "main_role": "Mid",
+        "id": "yena",
+        "name": "Yena",
+        "main_role": "Top",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yena-100x100.webp",
+        "win_rate": 52.6,
+        "pick_rate": 20,
+        "ban_rate": 1.6,
+        "attributes": {
+            "damage": 3,
+            "tankiness": 4,
+            "mobility": 2,
+            "teamfight": 4,
+            "split_push": 4
+        },
+        "tags": [
+            "top",
+            "crawled"
+        ]
+    },
+    {
+        "id": "yorn",
+        "name": "Yorn",
+        "main_role": "AD",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d7088075d6e144e11f476782718320865d256521539c41.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yorn-100x100.webp",
+        "win_rate": 49.2,
+        "pick_rate": 10.8,
+        "ban_rate": 8.7,
+        "attributes": {
+            "damage": 5,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 4,
+            "split_push": 3
+        },
+        "tags": [
+            "ad",
+            "crawled"
+        ]
+    },
+    {
+        "id": "yue",
+        "name": "Yue",
+        "main_role": "Mid",
+        "tier": "S+",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Yue-100x100.webp",
+        "win_rate": 54.1,
+        "pick_rate": 13,
+        "ban_rate": 8.6,
         "attributes": {
             "damage": 4,
             "tankiness": 1,
@@ -2085,76 +2604,91 @@ const HERO_DATABASE = [
             "split_push": 2
         },
         "tags": [
-            "mages",
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "zata",
         "name": "Zata",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fcd5c439a7cc37896ab98d568b662bec5ec66637da75d1.jpg",
+        "main_role": "Mid",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zata-100x100.webp",
+        "win_rate": 51.4,
+        "pick_rate": 24.6,
+        "ban_rate": 42.7,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "damage": 4,
+            "tankiness": 1,
+            "mobility": 3,
+            "teamfight": 5,
+            "split_push": 2
         },
         "tags": [
+            "mid",
             "crawled"
         ]
     },
     {
         "id": "zephys",
         "name": "Zephys",
-        "main_role": "Top",
+        "main_role": "Jungle",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/zephys-1.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zephys.webp",
+        "win_rate": 49.2,
+        "pick_rate": 21.4,
+        "ban_rate": 11.3,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
-            "warriors",
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "zill",
         "name": "Zill",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b1a6c37ad9558ac5767e25ded5b6fcf759966ca7c1d431.jpg",
+        "main_role": "Jungle",
+        "tier": "B",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zill.webp",
+        "win_rate": 50.3,
+        "pick_rate": 4.5,
+        "ban_rate": 4.4,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
-            "mobility": 2,
-            "teamfight": 4,
+            "damage": 5,
+            "tankiness": 2,
+            "mobility": 5,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
+            "jungle",
             "crawled"
         ]
     },
     {
         "id": "zip",
         "name": "Zip",
-        "main_role": "Top",
-        "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e0f8f382d1be41adc8947bf1b849479b5d3823c7418f71.jpg",
+        "main_role": "SP",
+        "tier": "S",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zip-100x100.webp",
+        "win_rate": 54.2,
+        "pick_rate": 10.4,
+        "ban_rate": 24.4,
         "attributes": {
-            "damage": 3,
-            "tankiness": 4,
+            "damage": 1,
+            "tankiness": 5,
             "mobility": 2,
-            "teamfight": 4,
-            "split_push": 4
+            "teamfight": 5,
+            "split_push": 1
         },
         "tags": [
+            "sp",
             "crawled"
         ]
     },
@@ -2163,16 +2697,19 @@ const HERO_DATABASE = [
         "name": "Zuka",
         "main_role": "Jungle",
         "tier": "A",
-        "avatar": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d5166c51f37b444810f2ae3df056920d5c4938c59a4821.jpg",
+        "avatar": "https://aov-builds.com/wp-content/uploads/2024/08/Zuka-100x100.webp",
+        "win_rate": 68.2,
+        "pick_rate": 7.7,
+        "ban_rate": 0,
         "attributes": {
             "damage": 5,
             "tankiness": 2,
             "mobility": 5,
-            "teamfight": 4,
+            "teamfight": 3,
             "split_push": 4
         },
         "tags": [
-            "mages",
+            "jungle",
             "crawled"
         ]
     }
@@ -2239,7 +2776,7 @@ function generateSvgAvatar(name, role, tier) {
     let gradientEnd = '#1d4ed8';
     let accentColor = '#60a5fa';
     
-    if (tier === 'S') {
+    if (tier === 'S+' || tier === 'S') {
         gradientStart = '#f59e0b';
         gradientEnd = '#b45309';
         accentColor = '#fcd34d';
@@ -2330,11 +2867,21 @@ function calculateSuggestions() {
     
     // 2. Score each candidate
     const scoredCandidates = candidates.map(hero => {
-        let baseScore = 30; // Default B
-        if (hero.tier === 'S') baseScore = 50;
+        let baseScore = 30; // Default B / C
+        if (hero.tier === 'S+') baseScore = 55;
+        else if (hero.tier === 'S') baseScore = 50;
         else if (hero.tier === 'A') baseScore = 40;
+        else if (hero.tier === 'B') baseScore = 30;
+        else if (hero.tier === 'C') baseScore = 20;
         
         let score = baseScore;
+        
+        // Win rate adjustment (above 50.5% gets a bonus, below 49.5% gets a penalty)
+        let wrAdj = Math.round((hero.win_rate - 50.0) * 1.5);
+        if (wrAdj !== 0) {
+            score += wrAdj;
+            reasons.push({ points: wrAdj, text: `Tỷ lệ thắng thực tế (${hero.win_rate.toFixed(1)}%)` });
+        }
         const reasons = [];
         
         // --- Class Counter (Khắc chế Hệ) ---
@@ -2538,9 +3085,15 @@ function renderPickCol(picksArray, containerId, slotClass, teamType) {
                 metaDiv.appendChild(roleBadge);
                 
                 const tierBadge = document.createElement("span");
-                tierBadge.className = `pick-card-tier tier-${hero.tier}`;
+                const sanitizedTier = hero.tier.replace('+', 'Plus');
+                tierBadge.className = `pick-card-tier tier-${sanitizedTier}`;
                 tierBadge.textContent = `Tier ${hero.tier}`;
                 metaDiv.appendChild(tierBadge);
+                
+                const wrBadge = document.createElement("span");
+                wrBadge.className = "pick-card-wr";
+                wrBadge.textContent = `WR: ${hero.win_rate.toFixed(1)}%`;
+                metaDiv.appendChild(wrBadge);
                 
                 infoDiv.appendChild(metaDiv);
                 slot.appendChild(infoDiv);
@@ -2649,8 +3202,14 @@ function renderHeroGrid() {
         nameHeader.textContent = hero.name;
         card.appendChild(nameHeader);
         
+        const statsSpan = document.createElement("span");
+        statsSpan.className = "hero-card-stats";
+        statsSpan.textContent = `WR: ${hero.win_rate.toFixed(1)}%`;
+        card.appendChild(statsSpan);
+        
         const tierBadge = document.createElement("span");
-        tierBadge.className = `hero-card-badge tier-${hero.tier}`;
+        const sanitizedTier = hero.tier.replace('+', 'Plus');
+        tierBadge.className = `hero-card-badge tier-${sanitizedTier}`;
         tierBadge.textContent = hero.tier;
         card.appendChild(tierBadge);
         
@@ -2725,7 +3284,7 @@ function renderRecommendationsAndStats() {
                 details.appendChild(title);
                 
                 const subtitle = document.createElement("span");
-                subtitle.textContent = `${translateRole(hero.main_role)} • Gốc: ${baseScore}đ`;
+                subtitle.textContent = `${translateRole(hero.main_role)} • WR: ${hero.win_rate.toFixed(1)}% • Gốc: ${baseScore}đ`;
                 details.appendChild(subtitle);
                 
                 heroInfo.appendChild(details);

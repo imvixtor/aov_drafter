@@ -28,12 +28,16 @@
     --red-border: rgba(255, 42, 95, 0.2);
 
     /* Tier Colors */
+    --tier-splus: #ff2a5f;
+    /* Crimson / Neon Red */
     --tier-s: #f59e0b;
     /* Gold */
     --tier-a: #a855f7;
     /* Purple */
     --tier-b: #3b82f6;
     /* Blue */
+    --tier-c: #9ca3af;
+    /* Gray */
 
     /* Global Accents */
     --accent-gold: #f59e0b;
@@ -563,6 +567,13 @@ body {
     border-radius: 4px;
 }
 
+.pick-card-tier.tier-SPlus {
+    background: rgba(255, 42, 95, 0.15);
+    color: var(--tier-splus);
+    border: 1px solid rgba(255, 42, 95, 0.25);
+    box-shadow: 0 0 5px rgba(255, 42, 95, 0.25);
+}
+
 .pick-card-tier.tier-S {
     background: rgba(245, 158, 11, 0.15);
     color: var(--tier-s);
@@ -579,6 +590,21 @@ body {
     background: rgba(59, 130, 246, 0.15);
     color: var(--tier-b);
     border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.pick-card-tier.tier-C {
+    background: rgba(156, 163, 175, 0.12);
+    color: var(--tier-c);
+    border: 1px solid rgba(156, 163, 175, 0.18);
+}
+
+.pick-card-wr {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1px 5px;
+    border-radius: 4px;
 }
 
 /* Pick Mini attributes overlay */
@@ -832,6 +858,12 @@ body {
     pointer-events: none;
 }
 
+.hero-card-badge.tier-SPlus {
+    color: var(--tier-splus);
+    background: rgba(255, 42, 95, 0.2);
+    border: 1px solid rgba(255, 42, 95, 0.3);
+}
+
 .hero-card-badge.tier-S {
     color: var(--tier-s);
     background: rgba(245, 158, 11, 0.2);
@@ -845,6 +877,19 @@ body {
 .hero-card-badge.tier-B {
     color: var(--tier-b);
     background: rgba(59, 130, 246, 0.2);
+}
+
+.hero-card-badge.tier-C {
+    color: var(--tier-c);
+    background: rgba(156, 163, 175, 0.15);
+}
+
+.hero-card-stats {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    opacity: 0.85;
 }
 
 .hero-card.disabled {
