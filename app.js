@@ -2765,6 +2765,7 @@ let state = {
     // Filter & Search
     searchQuery: "",
     selectedRoleFilter: "all",
+    selectedRecRoleFilter: "all",
     
     // History for Undo
     history: []
@@ -2849,8 +2850,10 @@ function calculateSuggestions(teamType = "blue") {
     // Candidates base pool: not banned/picked
     let candidates = HERO_DATABASE.filter(h => !unavailableHeroes.has(h.id));
     
-    // Filter candidates by missing roles, unless no available hero matches them (fallback)
-    if (missingRoles.length > 0 && state.currentTurnIndex >= 10) { // Only force missing role suggestions in Pick phase
+    // Filter candidates by missing roles or specifically selected recommendations role filter
+    if (state.selectedRecRoleFilter !== "all") {
+        candidates = candidates.filter(h => h.main_role === state.selectedRecRoleFilter);
+    } else if (missingRoles.length > 0 && state.currentTurnIndex >= 10) { // Only force missing role suggestions in Pick phase
         let roleMatches = candidates.filter(h => missingRoles.includes(h.main_role));
         if (roleMatches.length > 0) {
             candidates = roleMatches;
@@ -3267,6 +3270,16 @@ function renderRecommendationsAndStats() {
         recTitle.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles magic-icon"></i> GỢI Ý TƯỚNG TỐI ƯU (ĐỘI ĐỎ)`;
     }
     
+    // Update active class on recommendations filter tabs
+    const recTabs = document.querySelectorAll("#rec-role-filters .rec-filter-tab");
+    recTabs.forEach(tab => {
+        if (tab.dataset.role === state.selectedRecRoleFilter) {
+            tab.classList.add("active");
+        } else {
+            tab.classList.remove("active");
+        }
+    });
+
     // Get recommendations for active team
     const { topSuggestions, missingRoles } = calculateSuggestions(activeTeam);
     
@@ -3460,6 +3473,7 @@ function handleHeroSelect(hero) {
     
     // Clear search query after pick
     state.searchQuery = "";
+    state.selectedRecRoleFilter = "all";
     document.getElementById("search-input").value = "";
     document.getElementById("clear-search-btn").style.display = "none";
     
@@ -3480,6 +3494,7 @@ function handleUndo() {
     state.picksBlue = prev.picksBlue;
     state.picksRed = prev.picksRed;
     
+    state.selectedRecRoleFilter = "all";
     // Hide overlay if shown
     hideCompletionOverlay();
     
@@ -3495,6 +3510,7 @@ function handleReset() {
     state.history = [];
     state.searchQuery = "";
     state.selectedRoleFilter = "all";
+    state.selectedRecRoleFilter = "all";
     
     document.getElementById("search-input").value = "";
     document.getElementById("clear-search-btn").style.display = "none";
@@ -3622,6 +3638,18 @@ document.addEventListener("DOMContentLoaded", () => {
             renderHeroGrid();
         }
     });
+    
+    // Recommendations lane filter events
+    const recFiltersContainer = document.getElementById("rec-role-filters");
+    if (recFiltersContainer) {
+        recFiltersContainer.addEventListener("click", (e) => {
+            const tab = e.target.closest(".rec-filter-tab");
+            if (tab) {
+                state.selectedRecRoleFilter = tab.dataset.role;
+                renderRecommendationsAndStats();
+            }
+        });
+    }
     
     // Controls events
     document.getElementById("btn-undo").addEventListener("click", handleUndo);
