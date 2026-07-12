@@ -2875,6 +2875,7 @@ function calculateSuggestions() {
         else if (hero.tier === 'C') baseScore = 20;
         
         let score = baseScore;
+        const reasons = [];
         
         // Win rate adjustment (above 50.5% gets a bonus, below 49.5% gets a penalty)
         let wrAdj = Math.round((hero.win_rate - 50.0) * 1.5);
@@ -2882,7 +2883,6 @@ function calculateSuggestions() {
             score += wrAdj;
             reasons.push({ points: wrAdj, text: `Tỷ lệ thắng thực tế (${hero.win_rate.toFixed(1)}%)` });
         }
-        const reasons = [];
         
         // --- Class Counter (Khắc chế Hệ) ---
         if (redPickedHeroes.length > 0) {
@@ -3078,11 +3078,6 @@ function renderPickCol(picksArray, containerId, slotClass, teamType) {
                 
                 const metaDiv = document.createElement("div");
                 metaDiv.className = "pick-card-meta";
-                
-                const roleBadge = document.createElement("span");
-                roleBadge.className = "pick-card-role";
-                roleBadge.textContent = translateRole(hero.main_role);
-                metaDiv.appendChild(roleBadge);
                 
                 const tierBadge = document.createElement("span");
                 const sanitizedTier = hero.tier.replace('+', 'Plus');
