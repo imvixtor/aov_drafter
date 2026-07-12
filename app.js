@@ -6184,8 +6184,9 @@ let state = {
     searchQuery: "",
     selectedRoleFilter: "all",
     selectedRecRoleFilter: "all",
-    recommendationMode: "meta",
+    recommendationMode: "counter",
     heroSortOption: "name",
+    skipBanPhase: localStorage.getItem("skipBanPhase") !== null ? localStorage.getItem("skipBanPhase") === "true" : true,
     
     // History for Undo
     history: []
@@ -7019,7 +7020,7 @@ function handleUndo() {
 }
 
 function handleReset() {
-    state.currentTurnIndex = 0;
+    state.currentTurnIndex = state.skipBanPhase ? 10 : 0;
     state.bansBlue = [null, null, null, null, null];
     state.bansRed = [null, null, null, null, null];
     state.picksBlue = [null, null, null, null, null];
@@ -7028,7 +7029,7 @@ function handleReset() {
     state.searchQuery = "";
     state.selectedRoleFilter = "all";
     state.selectedRecRoleFilter = "all";
-    state.recommendationMode = "meta";
+    state.recommendationMode = "counter";
     state.heroSortOption = "name";
     
     document.getElementById("search-input").value = "";
@@ -7204,6 +7205,41 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Initialize Theme
     initTheme();
+    
+    // Initialize Skip Ban Phase checkbox
+    const skipBanCheckbox = document.getElementById("skip-ban-checkbox");
+    if (skipBanCheckbox) {
+        skipBanCheckbox.checked = state.skipBanPhase;
+        skipBanCheckbox.addEventListener("change", (e) => {
+            state.skipBanPhase = e.target.checked;
+            localStorage.setItem("skipBanPhase", state.skipBanPhase);
+            
+            if (state.skipBanPhase && state.currentTurnIndex < 10) {
+                state.history.push({
+                    currentTurnIndex: state.currentTurnIndex,
+                    bansBlue: [...state.bansBlue],
+                    bansRed: [...state.bansRed],
+                    picksBlue: [...state.picksBlue],
+                    picksRed: [...state.picksRed]
+                });
+                state.bansBlue = [null, null, null, null, null];
+                state.bansRed = [null, null, null, null, null];
+                state.currentTurnIndex = 10;
+                renderUI();
+            } else if (!state.skipBanPhase && state.currentTurnIndex === 10) {
+                const noPicks = state.picksBlue.every(p => p === null) && state.picksRed.every(p => p === null);
+                if (noPicks) {
+                    state.currentTurnIndex = 0;
+                    renderUI();
+                }
+            }
+        });
+    }
+    
+    // Auto-skip ban phase on boot if setting is active
+    if (state.skipBanPhase && state.currentTurnIndex === 0) {
+        state.currentTurnIndex = 10;
+    }
     
     // Boot app
     renderUI();

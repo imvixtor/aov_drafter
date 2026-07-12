@@ -1731,3 +1731,84 @@ html[data-theme="light"] .completion-overlay {
 html[data-theme="light"] .overlay-content {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(2, 132, 199, 0.05);
 }
+
+/* --- SKIP BAN PHASE TOGGLE SETTING --- */
+.settings-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    height: 34px;
+}
+
+.settings-label {
+    font-family: var(--font-main);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    user-select: none;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 18px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: var(--transition-smooth);
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--text-muted);
+    transition: var(--transition-smooth);
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--blue-bg);
+    border-color: var(--blue-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+    background-color: var(--blue-primary);
+}
+
+html[data-theme="light"] .settings-group {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .slider {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .slider:before {
+    background-color: var(--text-muted);
+}
