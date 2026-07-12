@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main Style Sheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Theme setup script to prevent flash of wrong theme -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'system';
+            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme-setting', theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="app-background"></div>
@@ -36,6 +45,17 @@
             </div>
             
             <div class="header-actions">
+                <div class="theme-toggle-group" id="theme-toggle-group">
+                    <button class="theme-btn" data-theme-val="light" title="Giao diện Sáng">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button class="theme-btn" data-theme-val="dark" title="Giao diện Tối">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme-val="system" title="Giao diện Hệ thống">
+                        <i class="fa-solid fa-desktop"></i>
+                    </button>
+                </div>
                 <button id="btn-undo" class="control-btn warning" title="Quay lại lượt trước" disabled>
                     <i class="fa-solid fa-rotate-left"></i> Hoàn Tác
                 </button>

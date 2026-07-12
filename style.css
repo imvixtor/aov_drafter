@@ -46,6 +46,31 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html[data-theme="light"] {
+    --bg-dark: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(15, 23, 42, 0.08);
+    --border-color-hover: rgba(15, 23, 42, 0.16);
+
+    /* Text Colors */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    /* Blue Team (Đội Xanh) Neon Palette - adjusted for light background */
+    --blue-primary: #0284c7;
+    --blue-glow: rgba(2, 132, 199, 0.25);
+    --blue-bg: rgba(2, 132, 199, 0.06);
+    --blue-border: rgba(2, 132, 199, 0.2);
+
+    /* Red Team (Đội Đỏ) Neon Palette - adjusted for light background */
+    --red-primary: #e11d48;
+    --red-glow: rgba(225, 29, 72, 0.25);
+    --red-bg: rgba(225, 29, 72, 0.06);
+    --red-border: rgba(225, 29, 72, 0.2);
+}
+
 /* --- Reset & Global Styles --- */
 * {
     margin: 0;
@@ -115,7 +140,7 @@ body {
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 1.5px;
-    background: linear-gradient(90deg, #fff 0%, var(--blue-primary) 100%);
+    background: linear-gradient(90deg, var(--text-primary) 0%, var(--blue-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1358,4 +1383,167 @@ body {
     .sub-stat-row {
         grid-template-columns: 100px 1fr;
     }
+}
+
+/* ==========================================
+   AOV DRAFTER - THEME OVERRIDES & TOGGLE SYSTEM
+   ========================================== */
+
+/* --- Theme Toggle Segmented Control --- */
+.theme-toggle-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    border-radius: 30px;
+    gap: 2px;
+    margin-right: 5px;
+}
+
+html[data-theme="light"] .theme-toggle-group {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition-smooth);
+}
+
+.theme-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="light"] .theme-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-btn.active {
+    background: var(--blue-primary);
+    color: #070913;
+    box-shadow: 0 0 8px var(--blue-glow);
+}
+
+html[data-theme="light"] .theme-btn.active {
+    color: #ffffff;
+    box-shadow: 0 2px 8px var(--blue-glow);
+}
+
+/* --- Light Theme Component Overrides --- */
+html[data-theme="light"] .app-background {
+    background-image: linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.95) 100%), url('img/draft_bg.png');
+    filter: brightness(1.05) contrast(0.95) saturate(0.85);
+}
+
+html[data-theme="light"] .app-header {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .status-bar {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .control-btn {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+html[data-theme="light"] .control-btn:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .search-box {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+html[data-theme="light"] .filter-tab {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .filter-tab:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .filter-tab.active {
+    background: var(--blue-bg);
+    color: var(--blue-primary);
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 10px rgba(2, 132, 199, 0.1);
+}
+
+html[data-theme="light"] .hero-card {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+html[data-theme="light"] .hero-card:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+}
+
+html[data-theme="light"] .pick-slot {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+html[data-theme="light"] .ban-slot {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .ban-slot::after {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="light"] .pick-card-role {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .progress-track {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .sub-stats-grid {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.02);
+}
+
+html[data-theme="light"] .sub-stat-visual {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .sub-bar-center {
+    background: #cbd5e1;
+    color: var(--text-secondary);
+    border-left-color: rgba(0, 0, 0, 0.05);
+    border-right-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme="light"] .rec-card-score {
+    background: var(--blue-bg);
+    color: var(--blue-primary);
+    border: 1px solid var(--blue-border);
+}
+
+html[data-theme="light"] .rec-card-reason {
+    color: var(--text-secondary);
+}
+
+html[data-theme="light"] .completion-overlay {
+    background: rgba(241, 245, 249, 0.85);
+}
+
+html[data-theme="light"] .overlay-content {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(2, 132, 199, 0.05);
 }
