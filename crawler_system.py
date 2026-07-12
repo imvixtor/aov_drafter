@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-AoV / Liên Quân Mobile - Consolidated Meta & Avatar Crawler
+AoV / Liên Quân Mobile - Consolidated Meta, Avatar & Counter-Pick Crawler
 This script crawls the complete database of 129 AoV heroes:
 1. Queries aov-builds.com/tuong/ to get the official Vietnamese roster, display names, and webp avatars.
-2. Queries rovmeta.com to parse the Next.js stream payload for S+/S/A/B/C tiers, win/pick/ban rates, and roles.
-3. Resolves Next.js pointers, maps names, translates roles to lanes, and merges everything.
+2. Queries rovmeta.com to parse the Next.js stream payload for S+/S/A/B/C tiers, win/pick/ban rates, roles, and counter-pick references.
+3. Resolves Next.js pointers, maps names, translates roles to lanes, maps counter-pick relationships, and merges everything.
 4. Auto-patches app.js with the updated HERO_DATABASE.
 """
 
@@ -40,6 +40,15 @@ AOV_TO_ROVMETA = {
     "payna": "payna",
     "the-joker": "thejoker",
     "azzenka": "azzenka"
+}
+
+# Map legacy/different English names found in counters to modern local IDs
+UNMATCHED_REPLACEMENTS = {
+    "payna": "helen",
+    "mortos": "arthur",
+    "batman": "kaine",
+    "brunhilda": "celica",
+    "thejoker": "stuart"
 }
 
 # Map RovMeta roles to drafting lane roles
@@ -157,6 +166,7 @@ def main():
     # --- PHASE 2: CRAWL ROVMETA.COM FOR META STATS ---
     # ====================================================
     meta_heroes = {}
+    tiers_data = {}
     print(f"[+] 2. Gửi yêu cầu tải trang chủ RovMeta: {ROVMETA_URL}...")
     try:
         meta_response = requests.get(ROVMETA_URL, headers=HEADERS, timeout=15)
@@ -218,7 +228,8 @@ def main():
                                 "tier": tier,
                                 "win_rate": stats.get("win_rate", 50.0),
                                 "pick_rate": stats.get("pick_rate", 5.0),
-                                "ban_rate": stats.get("ban_rate", 1.0)
+                                "ban_rate": stats.get("ban_rate", 1.0),
+                                "raw_item": item
                             }
                 print(f"[+] Trích xuất thành công {len(meta_heroes)} tướng từ RovMeta.")
             else:
@@ -232,9 +243,29 @@ def main():
     # --- PHASE 3: MERGE DATA & UPDATE TARGET FILES ---
     # ====================================================
     print("[+] 3. Trộn và đồng bộ hóa cơ sở dữ liệu...")
+    
+    # Build mapping from English clean IDs to local clean IDs
+    meta_id_to_local_id = {}
+    for h in aov_heroes:
+        slug = h["slug"]
+        local_id = clean_id(slug)
+        mapped_meta_id = AOV_TO_ROVMETA.get(slug, clean_id(slug))
+        
+        meta_match_id = None
+        if mapped_meta_id in meta_heroes:
+            meta_match_id = mapped_meta_id
+        else:
+            for cid in meta_heroes:
+                if cid in mapped_meta_id or mapped_meta_id in cid:
+                    meta_match_id = cid
+                    break
+        if meta_match_id:
+            meta_id_to_local_id[meta_match_id] = local_id
+
     crawled_database = []
     meta_matches = 0
     ad_count = 0
+    total_counters_linked = 0
     
     for h in aov_heroes:
         slug = h["slug"]
@@ -261,6 +292,7 @@ def main():
         ban_rate = 1.0
         tier = "A"
         raw_role = "warrior"
+        local_counters = []
         
         if meta_match:
             win_rate = meta_match["win_rate"]
@@ -269,6 +301,37 @@ def main():
             tier = meta_match["tier"]
             raw_role = meta_match["role"]
             meta_matches += 1
+            
+            # Resolve counter-pick IDs
+            raw_item = meta_match.get("raw_item", {})
+            raw_counters = raw_item.get("counters", []) if isinstance(raw_item, dict) else []
+            for c in raw_counters:
+                if isinstance(c, str):
+                    resolved_c = resolve_nextjs_pointer(c, tiers_data)
+                    if resolved_c:
+                        c = resolved_c
+                if isinstance(c, dict):
+                    chero = c.get("hero", {})
+                    if isinstance(chero, str):
+                        resolved_chero = resolve_nextjs_pointer(chero, tiers_data)
+                        if resolved_chero:
+                            chero = resolved_chero
+                    if isinstance(chero, dict):
+                        name_en = chero.get("name_en", "")
+                        if name_en:
+                            c_meta_id = clean_id(name_en)
+                            # Handle legacy name replacements
+                            c_meta_id = UNMATCHED_REPLACEMENTS.get(c_meta_id, c_meta_id)
+                            
+                            c_local_id = meta_id_to_local_id.get(c_meta_id)
+                            if not c_local_id:
+                                for cid in meta_id_to_local_id:
+                                    if cid in c_meta_id or c_meta_id in cid:
+                                        c_local_id = meta_id_to_local_id[cid]
+                                        break
+                            if c_local_id and c_local_id not in local_counters:
+                                local_counters.append(c_local_id)
+                                total_counters_linked += 1
             
         # Map RovMeta archetype roles to lane roles
         main_role = ROVMETA_ROLE_TO_LANE.get(raw_role, "Top")
@@ -292,10 +355,12 @@ def main():
             "pick_rate": pick_rate,
             "ban_rate": ban_rate,
             "attributes": attributes,
+            "counters": local_counters,
             "tags": [main_role.lower(), "crawled"]
         })
         
     print(f"[+] Trộn xong! Tổng cộng: {len(crawled_database)} tướng. Khớp chỉ số RovMeta: {meta_matches}/{len(aov_heroes)}.")
+    print(f"[+] Tổng số mối liên kết khắc chế đã nhập: {total_counters_linked}")
     print(f"[+] Số lượng tướng AD (Xạ Thủ): {ad_count}")
     
     # Write json output

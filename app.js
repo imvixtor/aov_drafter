@@ -20,6 +20,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -41,6 +44,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -62,6 +68,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "ngokhong",
+            "nakroth",
+            "zill"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -83,6 +94,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "hayate",
+            "elandorr",
+            "fennik"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -104,6 +120,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -125,6 +145,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -146,6 +170,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "stuart"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -167,6 +194,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "krixi",
+            "goverra",
+            "dyadia",
+            "thorne"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -188,6 +221,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch",
+            "omen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -209,6 +247,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "alice",
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -230,6 +273,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "wisp",
+            "zip",
+            "hayate",
+            "elsu"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -251,6 +300,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "maloch",
+            "slimz"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -272,6 +325,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "ilumia",
+            "yan",
+            "slimz",
+            "baldum"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -293,6 +352,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zill",
+            "murad",
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -314,6 +378,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "omen",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -335,6 +403,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "omen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -356,6 +427,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "baldum",
+            "richter",
+            "iggy",
+            "goverra"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -377,6 +454,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "valhein",
+            "sinestrea",
+            "kaine",
+            "cresht"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -398,6 +481,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "errol",
+            "cresht",
+            "rouie",
+            "darcy"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -419,6 +508,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "kriknak",
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -440,6 +533,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -461,6 +559,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "max"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -482,6 +583,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -503,6 +608,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "ngokhong",
+            "roxie",
+            "wisp",
+            "qi"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -524,6 +635,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "biron",
+            "hayate",
+            "lorion",
+            "aya"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -545,6 +662,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "valhein",
+            "telannas",
+            "fennik"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -566,6 +688,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "alice",
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -587,6 +714,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -608,6 +738,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "hayate"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -629,6 +762,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zill",
+            "murad",
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -650,6 +788,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "darcy"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -671,6 +812,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "rourke",
+            "cresht",
+            "lumburr",
+            "arthur"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -692,6 +839,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zill",
+            "roxie",
+            "wonderwoman",
+            "lauriel"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -713,6 +866,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "ignis",
+            "preyta",
+            "laville",
+            "gildur"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -734,6 +893,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -755,6 +919,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -776,6 +945,11 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "arum",
+            "kriknak",
+            "murad"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -797,6 +971,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "max"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -818,6 +995,10 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "lubo"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -839,6 +1020,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -860,6 +1046,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "rouie",
+            "tachi",
+            "charlotte",
+            "ybneth"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -881,6 +1073,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "qi",
+            "zuka",
+            "laville",
+            "celica"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -902,6 +1100,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "qi",
+            "zuka",
+            "laville",
+            "celica"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -923,6 +1127,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "astrid",
+            "arthur",
+            "dirak",
+            "tamyn"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -944,6 +1154,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "violet",
+            "teemee",
+            "erin",
+            "edras"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -965,6 +1181,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -986,6 +1205,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "aya"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -1007,6 +1229,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "yorn",
+            "maloch",
+            "thane",
+            "teeri"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1028,6 +1256,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1049,6 +1280,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zuka",
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1070,6 +1305,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "celica",
+            "teeri",
+            "zuka",
+            "taara"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1091,6 +1332,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth",
+            "kriknak",
+            "murad"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1112,6 +1358,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "darcy",
+            "dirak",
+            "dieuthuyen"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1133,6 +1384,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "aleister",
+            "gildur",
+            "ormarr"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1154,6 +1410,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "ilumia",
+            "ormarr",
+            "alice",
+            "zill"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1175,6 +1437,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "zill",
+            "boltbaron",
+            "zata",
+            "quillen"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1196,6 +1464,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "yena",
+            "annette",
+            "kaine",
+            "ryoma"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1217,6 +1491,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1238,6 +1516,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "alice",
+            "nakroth",
+            "azzenka",
+            "helen"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1259,6 +1543,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "butterfly",
+            "zuka",
+            "wonderwoman",
+            "mina"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1280,6 +1570,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1301,6 +1595,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1322,6 +1620,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -1343,6 +1645,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth",
+            "kriknak",
+            "murad"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1364,6 +1671,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -1385,6 +1697,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth",
+            "omen"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1406,6 +1722,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch",
+            "omen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1427,6 +1748,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1448,6 +1772,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "omen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1469,6 +1796,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "maloch",
+            "richter"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1490,6 +1821,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "charlotte",
+            "superman",
+            "ishar",
+            "gildur"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1511,6 +1848,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zephys",
+            "zill",
+            "murad"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1532,6 +1874,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1553,6 +1899,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "erin",
+            "lumburr",
+            "kilgroth",
+            "ryoma"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1574,6 +1926,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -1595,6 +1952,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "zephys"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1616,6 +1976,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "yorn",
+            "fennik",
+            "dextra",
+            "ngokhong"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1637,6 +2003,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zill",
+            "murad",
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1658,6 +2029,10 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "baldum"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1679,6 +2054,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1700,6 +2079,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "jinna",
+            "fennik",
+            "yorn",
+            "capheny"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1721,6 +2106,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "edras",
+            "toro",
+            "sephera",
+            "tachi"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1742,6 +2133,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1763,6 +2157,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth",
+            "kriknak",
+            "murad"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1784,6 +2183,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "nakroth",
+            "kriknak",
+            "quillen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1805,6 +2209,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "ormarr",
+            "yorn",
+            "ata",
+            "yan"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1826,6 +2236,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1847,6 +2260,9 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "maloch"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1868,6 +2284,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -1889,6 +2308,10 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1910,6 +2333,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "omen",
+            "baldum"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1931,6 +2358,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "skud",
+            "allain",
+            "ormarr",
+            "tulen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -1952,6 +2385,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "omen",
+            "lubo",
+            "rouie",
+            "ming"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -1973,6 +2412,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "nakroth"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -1994,6 +2436,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "zephys",
+            "maloch",
+            "omen"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2015,6 +2462,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2036,6 +2487,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "liliana",
+            "zip",
+            "yena",
+            "paine"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2057,6 +2514,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "hayate",
+            "telannas",
+            "stuart"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2078,6 +2540,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "alice",
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2099,6 +2566,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "stuart",
+            "nakroth",
+            "lubo",
+            "yorn"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2120,6 +2593,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "mina",
+            "kaine",
+            "dyadia",
+            "arthur"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2141,6 +2620,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "fennik",
+            "biron",
+            "volkath",
+            "omen"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2162,6 +2647,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "ming",
+            "moren",
+            "astrid",
+            "ilumia"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2183,6 +2674,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2204,6 +2700,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "omen"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2225,6 +2724,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "aleister"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -2246,6 +2748,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2267,6 +2774,10 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "baldum",
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2288,6 +2799,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "bright",
+            "richter",
+            "hayate",
+            "sinestrea"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2309,6 +2826,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "ngokhong",
+            "ormarr",
+            "max",
+            "butterfly"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -2330,6 +2853,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2351,6 +2879,11 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "zephys",
+            "zill",
+            "murad"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -2372,6 +2905,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "ilumia",
+            "kriknak",
+            "qi",
+            "teemee"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2393,6 +2932,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2414,6 +2957,10 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "elandorr",
+            "fennik"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2435,6 +2982,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "dirak",
+            "erin",
+            "krixi",
+            "bijan"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2456,6 +3009,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2477,6 +3035,12 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "preyta",
+            "tachi",
+            "lindis",
+            "kaine"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2498,6 +3062,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "omen"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2519,6 +3086,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2540,6 +3110,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "volkath",
+            "dirak",
+            "liliana",
+            "krixi"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -2561,6 +3137,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 4
         },
+        "counters": [
+            "richter",
+            "omen",
+            "astrid"
+        ],
         "tags": [
             "top",
             "crawled"
@@ -2582,6 +3163,11 @@ const HERO_DATABASE = [
             "teamfight": 4,
             "split_push": 3
         },
+        "counters": [
+            "murad",
+            "nakroth",
+            "kriknak"
+        ],
         "tags": [
             "ad",
             "crawled"
@@ -2603,6 +3189,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "arum",
+            "charlotte",
+            "erin",
+            "flowbornphep"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -2624,6 +3216,12 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 2
         },
+        "counters": [
+            "dolia",
+            "veera",
+            "ryoma",
+            "aleister"
+        ],
         "tags": [
             "mid",
             "crawled"
@@ -2645,6 +3243,9 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "hayate"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -2666,6 +3267,11 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "nakroth",
+            "kriknak",
+            "murad"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -2687,6 +3293,9 @@ const HERO_DATABASE = [
             "teamfight": 5,
             "split_push": 1
         },
+        "counters": [
+            "thane"
+        ],
         "tags": [
             "sp",
             "crawled"
@@ -2708,6 +3317,12 @@ const HERO_DATABASE = [
             "teamfight": 3,
             "split_push": 4
         },
+        "counters": [
+            "mina",
+            "ata",
+            "telannas",
+            "ilumia"
+        ],
         "tags": [
             "jungle",
             "crawled"
@@ -2910,12 +3525,24 @@ function calculateSuggestions(teamType = "blue") {
             }
         }
         
-        // --- Hard Counter (Khắc chế Cứng) ---
+        // --- Hard Counter & Counter Database Check ---
         enemyPickedHeroes.forEach(enemy => {
+            // 1. Manual check (has specific reason)
             const counterRule = COUNTERS_MANUAL.find(c => c.counter === hero.id && c.countered === enemy.id);
             if (counterRule) {
                 score += 20;
                 reasons.push({ points: 20, text: `Khắc chế cứng ${enemy.name} (${counterRule.reason})` });
+            } 
+            // 2. Crawled database check (if enemy lists our hero as a counter)
+            else if (enemy.counters && enemy.counters.includes(hero.id)) {
+                score += 20;
+                reasons.push({ points: 20, text: `Khắc chế đối phương: ${hero.name} khắc chế ${enemy.name} (RovMeta)` });
+            }
+            
+            // 3. Penalty if our hero is countered by enemy (if candidate lists enemy as a counter)
+            if (hero.counters && hero.counters.includes(enemy.id)) {
+                score -= 15;
+                reasons.push({ points: -15, text: `Bị khắc chế: ${hero.name} ngại gặp ${enemy.name} (RovMeta)` });
             }
         });
         
