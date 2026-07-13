@@ -6298,7 +6298,7 @@ function calculateSuggestions(teamType = "blue") {
     // 2. Score each candidate
     const scoredCandidates = candidates.map(hero => {
         let baseScore = 30; // Default
-        let wrAdj = 0;
+        let statsAdj = 0;
         
         if (state.recommendationMode === "meta") {
             if (hero.tier === 'S+') baseScore = 55;
@@ -6307,30 +6307,41 @@ function calculateSuggestions(teamType = "blue") {
             else if (hero.tier === 'B') baseScore = 30;
             else if (hero.tier === 'C') baseScore = 20;
             
-            wrAdj = Math.round((hero.win_rate - 50.0) * 1.5);
+            // Meta mode: Win rate has extremely low weight; Pick and Ban rates are prioritized
+            statsAdj = Math.round(
+                (hero.win_rate - 50.0) * 0.1 +
+                (hero.pick_rate - 10.0) * 0.6 +
+                (hero.ban_rate - 5.0) * 0.3
+            );
         } else {
-            // Counter Mode: Tier and Win rate have almost no influence
+            // Counter Mode: Tier and Win/Pick/Ban rate have very minor influence (still prioritizing pick/ban)
             if (hero.tier === 'S+') baseScore = 22;
             else if (hero.tier === 'S') baseScore = 21;
             else if (hero.tier === 'A') baseScore = 20;
             else if (hero.tier === 'B') baseScore = 19;
             else if (hero.tier === 'C') baseScore = 18;
             
-            wrAdj = Math.round((hero.win_rate - 50.0) * 0.15);
+            statsAdj = Math.round(
+                (hero.win_rate - 50.0) * 0.02 +
+                (hero.pick_rate - 10.0) * 0.1 +
+                (hero.ban_rate - 5.0) * 0.05
+            );
         }
         
         let score = baseScore;
         const reasons = [];
         
-        if (wrAdj !== 0) {
-            score += wrAdj;
-            reasons.push({ points: wrAdj, text: `Tỷ lệ thắng thực tế (${hero.win_rate.toFixed(1)}%)` });
+        if (statsAdj !== 0) {
+            score += statsAdj;
+            reasons.push({ 
+                points: statsAdj, 
+                text: `Hiệu suất thực tế (${hero.win_rate.toFixed(1)}% WR / ${hero.pick_rate.toFixed(1)}% PR / ${hero.ban_rate.toFixed(1)}% BR)` 
+            });
         }
         
         // --- Flexible Lane Swapping (Bonus for correct lane) ---
         if (state.selectedRecRoleFilter === "all" && missingRoles.includes(hero.main_role)) {
-            score += 5;
-            reasons.push({ points: 5, text: `Phù hợp lane còn thiếu (${translateRole(hero.main_role)})` });
+            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
         }
         
         // --- Class Counter (Khắc chế Hệ) ---
@@ -6410,21 +6421,18 @@ function calculateSuggestions(teamType = "blue") {
         }
         
         // --- Composition Structural Balance (Bù đắp cơ cấu) ---
+        const hasFrontline = pickedHeroes.some(h => (h.main_role === "SP" || h.main_role === "Top") && h.attributes.tankiness >= 4);
         const hasMid = pickedHeroes.some(h => h.main_role === "Mid");
         const hasAD = pickedHeroes.some(h => h.main_role === "AD");
-        const hasFrontline = pickedHeroes.some(h => (h.main_role === "SP" || h.main_role === "Top") && h.attributes.tankiness >= 4);
         
+        if (!hasFrontline && hero.attributes.tankiness >= 4 && (hero.main_role === "SP" || hero.main_role === "Top")) {
+            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
+        }
         if (!hasMid && hero.main_role === "Mid") {
-            score += 15;
-            reasons.push({ points: 15, text: "Bổ sung nguồn Sát thương Phép chính cho đội (Pháp Sư)" });
+            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
         }
         if (!hasAD && hero.main_role === "AD") {
-            score += 15;
-            reasons.push({ points: 15, text: "Bổ sung nguồn Sát thương Vật lý chủ lực (Xạ Thủ)" });
-        }
-        if (!hasFrontline && hero.attributes.tankiness >= 4 && (hero.main_role === "SP" || hero.main_role === "Top")) {
-            score += 15;
-            reasons.push({ points: 15, text: "Bổ sung tướng Đỡ đòn / Tiên phong chống chịu gánh chịu sát thương" });
+            score += 1; // Minor bonus point, not listed in reasons to clean up UI notes
         }
         
         // --- Dynamic Counter-Drafting (Khắc chế động) ---
@@ -6435,10 +6443,6 @@ function calculateSuggestions(teamType = "blue") {
         if (enemyHighBurst && hero.main_role === "SP" && hero.attributes.tankiness >= 4) {
             score += 15;
             reasons.push({ points: 15, text: "Đỡ đòn bảo kê giảm sát thương từ nguồn sốc dame phép của địch" });
-        }
-        if (hero.ban_rate >= 15.0) {
-            score += 10;
-            reasons.push({ points: 10, text: "Tranh bài: Tướng Hot Meta cạnh tranh cao (Ban rate ≥ 15%)" });
         }
         
         return {
