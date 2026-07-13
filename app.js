@@ -6946,7 +6946,10 @@ function renderCompositionStats() {
     }
     
     // Update HTML texts & bars (Blue Left, Red Right)
-    document.getElementById("blue-score-text").textContent = `${blueScore.toFixed(1)}/5.0 (${Math.round(bluePct)}%)`;
+    const blueScoreEl = document.getElementById("blue-score-text");
+    if (!blueScoreEl) return;
+    
+    blueScoreEl.textContent = `${blueScore.toFixed(1)}/5.0 (${Math.round(bluePct)}%)`;
     document.getElementById("blue-progress-bar").style.width = `${bluePct}%`;
     
     document.getElementById("red-score-text").textContent = `${redScore.toFixed(1)}/5.0 (${Math.round(redPct)}%)`;

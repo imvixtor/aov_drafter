@@ -50,30 +50,34 @@
             </div>
 
             <div class="header-actions">
-                <div class="theme-toggle-group" id="theme-toggle-group">
-                    <button class="theme-btn" data-theme-val="light" title="Giao diện Sáng">
-                        <i class="fa-solid fa-sun"></i>
+                <div class="settings-actions">
+                    <div class="theme-toggle-group" id="theme-toggle-group">
+                        <button class="theme-btn" data-theme-val="light" title="Giao diện Sáng">
+                            <i class="fa-solid fa-sun"></i>
+                        </button>
+                        <button class="theme-btn" data-theme-val="dark" title="Giao diện Tối">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                        <button class="theme-btn" data-theme-val="system" title="Giao diện Hệ thống">
+                            <i class="fa-solid fa-desktop"></i>
+                        </button>
+                    </div>
+                    <div class="settings-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="skip-ban-checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="settings-label">Bỏ qua cấm</span>
+                    </div>
+                </div>
+                <div class="button-actions">
+                    <button id="btn-undo" class="control-btn warning" title="Quay lại lượt trước" disabled>
+                        <i class="fa-solid fa-rotate-left"></i> <span>Hoàn Tác</span>
                     </button>
-                    <button class="theme-btn" data-theme-val="dark" title="Giao diện Tối">
-                        <i class="fa-solid fa-moon"></i>
-                    </button>
-                    <button class="theme-btn" data-theme-val="system" title="Giao diện Hệ thống">
-                        <i class="fa-solid fa-desktop"></i>
+                    <button id="btn-reset" class="control-btn danger" title="Thiết lập lại từ đầu">
+                        <i class="fa-solid fa-arrows-rotate"></i> <span>Reset</span>
                     </button>
                 </div>
-                <div class="settings-group">
-                    <label class="toggle-switch">
-                        <input type="checkbox" id="skip-ban-checkbox" checked>
-                        <span class="slider"></span>
-                    </label>
-                    <span class="settings-label">Bỏ qua cấm</span>
-                </div>
-                <button id="btn-undo" class="control-btn warning" title="Quay lại lượt trước" disabled>
-                    <i class="fa-solid fa-rotate-left"></i> Hoàn Tác
-                </button>
-                <button id="btn-reset" class="control-btn danger" title="Thiết lập lại từ đầu">
-                    <i class="fa-solid fa-arrows-rotate"></i> Reset
-                </button>
             </div>
         </header>
 
@@ -177,62 +181,7 @@
                         </div>
                     </div>
 
-                    <!-- TEAM COMPARISON AND STATS -->
-                    <div class="team-stats-box" id="team-stats">
-                        <div class="stats-header">
-                            <h4><i class="fa-solid fa-chart-bar stats-icon"></i> ĐÁNH GIÁ SỨC MẠNH ĐỘI HÌNH</h4>
-                        </div>
-
-                        <div class="overall-progress-bars">
-                            <div class="team-bar-container blue-team-bar">
-                                <div class="bar-labels">
-                                    <span>Đội Xanh</span>
-                                    <span id="blue-score-text">0.0/5.0 (0%)</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" id="blue-progress-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-
-                            <div class="team-bar-container red-team-bar">
-                                <div class="bar-labels">
-                                    <span>Đội Đỏ</span>
-                                    <span id="red-score-text">0.0/5.0 (0%)</span>
-                                </div>
-                                <div class="progress-track">
-                                    <div class="progress-fill" id="red-progress-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Mini breakdown comparison -->
-                        <div class="sub-stats-grid" id="sub-stats-container">
-                            <div class="sub-stat-row">
-                                <span class="sub-stat-label">Sát thương (Dmg)</span>
-                                <div class="sub-stat-visual">
-                                    <div class="sub-bar left" id="sub-bar-dmg-blue" style="width: 0%"></div>
-                                    <div class="sub-bar-center">VS</div>
-                                    <div class="sub-bar right" id="sub-bar-dmg-red" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="sub-stat-row">
-                                <span class="sub-stat-label">Chống chịu (Tank)</span>
-                                <div class="sub-stat-visual">
-                                    <div class="sub-bar left" id="sub-bar-tank-blue" style="width: 0%"></div>
-                                    <div class="sub-bar-center">VS</div>
-                                    <div class="sub-bar right" id="sub-bar-tank-red" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="sub-stat-row">
-                                <span class="sub-stat-label">Giao tranh (Teamfight)</span>
-                                <div class="sub-stat-visual">
-                                    <div class="sub-bar left" id="sub-bar-tf-blue" style="width: 0%"></div>
-                                    <div class="sub-bar-center">VS</div>
-                                    <div class="sub-bar right" id="sub-bar-tf-red" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </section>
 

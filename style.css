@@ -149,6 +149,7 @@ body {
     background: linear-gradient(90deg, var(--text-primary) 0%, var(--blue-primary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    white-space: nowrap;
 }
 
 .logo-text span {
@@ -156,6 +157,7 @@ body {
     color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 /* --- Central Status Bar --- */
@@ -201,14 +203,24 @@ body {
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .status-main span {
     display: inline-block;
+    white-space: nowrap;
 }
 
 .header-actions {
     display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.settings-actions,
+.button-actions {
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -226,6 +238,7 @@ body {
     align-items: center;
     gap: 8px;
     transition: var(--transition-smooth);
+    white-space: nowrap;
 }
 
 .control-btn:hover:not(:disabled) {
@@ -1475,30 +1488,53 @@ html[data-theme="light"] .rec-filter-tab.active {
 
 /* --- RESPONSIVE LAYOUT (MEDIA QUERIES) --- */
 
-/* Medium screen / Tablet devices (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* Medium screen / Tablet devices (max-width: 1280px) */
+@media (max-width: 1280px) {
     .container {
         padding: 10px;
     }
 
     .app-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+        padding: 12px 16px;
+        align-items: center;
     }
 
     .header-logo {
-        justify-content: center;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-content: flex-start;
+    }
+
+    .logo-text span {
+        display: none; /* Hide subtitle to save vertical/horizontal space */
+    }
+
+    .logo-text h1 {
+        font-size: 18px;
     }
 
     .status-bar {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
         min-width: 0;
         width: 100%;
+        max-width: 500px;
+        justify-self: center;
+        margin: 0 auto;
     }
 
     .header-actions {
-        justify-content: center;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        display: flex;
+        gap: 12px;
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     .draft-hud {
@@ -1523,52 +1559,463 @@ html[data-theme="light"] .rec-filter-tab.active {
     }
 }
 
-/* Small screen / Mobile devices (max-width: 680px) */
-@media (max-width: 680px) {
+/* Small screen / Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 8px;
+    }
+
     .draft-hud {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
     }
 
     .blue-team {
+        grid-column: 1 / 2;
         order: 1;
+        padding: 8px;
     }
 
     .red-team {
+        grid-column: 2 / 3;
         order: 2;
+        padding: 8px;
     }
 
     .center-column {
+        grid-column: 1 / 3;
         order: 3;
+        gap: 12px;
+    }
+
+    /* Compact Header */
+    .app-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 8px;
+        padding: 8px 10px;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .header-logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .logo-icon {
+        font-size: 18px;
+    }
+
+    .logo-text h1 {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+        display: none; /* Hide subtitle to save vertical space */
+    }
+
+    .status-bar {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        min-width: 0;
+        width: 100%;
+        padding: 4px 8px;
+        gap: 6px;
+        border-radius: 20px;
+        box-shadow: none;
+    }
+
+    .phase-badge {
+        font-size: 9px;
+        padding: 2px 6px;
+        white-space: nowrap;
+    }
+
+    .status-main {
+        font-size: 11.5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .header-actions {
+        display: contents; /* Grid layout behaves better if children are direct grid items */
+    }
+
+    .settings-actions {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .theme-toggle-group {
+        margin-right: 0;
+    }
+
+    .theme-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+
+    .settings-group {
+        margin-right: 0;
+        height: 28px;
+        padding: 2px 6px;
+        border-radius: 15px;
+        gap: 4px;
+    }
+
+    .toggle-switch {
+        width: 26px;
+        height: 14px;
+    }
+
+    .slider:before {
+        height: 10px;
+        width: 10px;
+        left: 2px;
+        bottom: 1px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(12px);
+    }
+
+    .settings-label {
+        display: none; /* Hide text, icon/switch is enough for mobile screen */
+    }
+
+    .button-actions {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .control-btn {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .control-btn span {
+        display: none; /* Hide label text on mobile buttons */
+    }
+
+    .control-btn i {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    /* Team Columns Styles - Side-by-Side Mobile Optimization */
+    .team-header h2 {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    .team-badge {
+        display: none; /* Hide large badge to save space */
+    }
+
+    /* Bans Compact Section */
+    .ban-section {
+        margin-bottom: 5px;
+    }
+
+    .ban-title {
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+
+    .ban-slots-row {
+        gap: 4px;
+    }
+
+    .ban-slot {
+        border-radius: 4px;
+    }
+
+    .ban-slot::after {
+        font-size: 10px;
+    }
+
+    /* Picks Compact Section */
+    .pick-title {
+        font-size: 9px;
+        margin-bottom: 5px;
+    }
+
+    .pick-slots-col {
+        gap: 6px;
     }
 
     .pick-slot {
-        height: 68px;
-        padding: 6px;
-        gap: 8px;
+        height: 48px;
+        padding: 4px;
+        gap: 6px;
+        border-radius: 6px;
+    }
+
+    .pick-slot::before {
+        width: 2.5px;
     }
 
     .pick-card-img {
-        width: 48px;
-        height: 48px;
+        width: 38px;
+        height: 38px;
+        border-radius: 4px;
+    }
+
+    .pick-card-info h4 {
+        font-size: 11.5px;
+    }
+
+    .pick-card-meta {
+        margin-top: 1px;
+        gap: 3px;
+    }
+
+    .pick-card-role {
+        font-size: 8px;
+        padding: 0 3px;
+        border-radius: 2px;
+    }
+
+    .pick-card-tier {
+        font-size: 8px;
+        padding: 0 3px;
+        border-radius: 2px;
+    }
+
+    .pick-card-wr {
+        display: none; /* Hide win rate on mobile to clean up space */
+    }
+
+    .pick-placeholder-content {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+
+    .pick-placeholder-content span {
+        font-size: 8px;
+        margin-top: 1px;
     }
 
     .pick-mini-stats {
+        display: none; /* Hidden on mobile */
+    }
+
+    /* Center Column & Hero Grid adjustments */
+    .selection-panel {
+        padding: 10px;
+        max-height: 420px;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+
+    .role-filters {
+        width: 100%;
+        justify-content: flex-start;
+        padding-bottom: 2px;
+    }
+
+    .filter-tab {
+        padding: 6px 10px;
+        font-size: 11.5px;
+        border-radius: 6px;
+    }
+
+    .filter-controls-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .search-box {
+        height: 34px;
+        padding: 0 8px;
+        border-radius: 6px;
+    }
+
+    .search-icon {
+        font-size: 12px;
+        margin-right: 6px;
+    }
+
+    .search-box input {
+        font-size: 12.5px;
+    }
+
+    .sort-select {
+        height: 34px;
+        padding: 0 6px;
+        border-radius: 6px;
+        font-size: 11px;
+        width: 100%;
+    }
+
+    .hero-grid {
+        grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+        gap: 6px;
+    }
+
+    .hero-card {
+        padding: 4px;
+        border-radius: 6px;
+    }
+
+    .hero-card-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        margin-bottom: 3px;
+    }
+
+    .hero-card h5 {
+        font-size: 10px;
+    }
+
+    .hero-card-badge {
+        font-size: 8px;
+        padding: 0 2px;
+        border-radius: 2px;
+        top: 1px;
+        right: 1px;
+    }
+
+    .hero-card-stats {
+        font-size: 8px;
+        margin-top: 1px;
+    }
+
+    /* Recommendations Board */
+    .recommendation-panel {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .rec-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-bottom: 6px;
+    }
+
+    .rec-header h3 {
+        font-size: 12px;
+    }
+
+    .role-target {
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .rec-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+
+    .rec-filters-left {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+    }
+
+    .rec-filters-left::-webkit-scrollbar {
         display: none;
+    }
+
+    .rec-filter-tab {
+        padding: 4px 8px;
+        font-size: 10px;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
+
+    .rec-modes-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .mode-btn {
+        flex: 1;
+        padding: 4px 6px;
+        font-size: 9.5px;
+        border-radius: 4px;
+        justify-content: center;
     }
 
     .rec-list {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 8px;
     }
 
-    .overall-progress-bars {
-        grid-template-columns: 1fr;
+    .rec-card {
+        padding: 8px;
+        border-radius: 8px;
     }
 
-    .sub-stat-row {
-        grid-template-columns: 100px 1fr;
+    .rec-card-score {
+        font-size: 10px;
+        padding: 1px 5px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .rec-card-hero-info {
+        gap: 8px;
+        margin-bottom: 6px;
+    }
+
+    .rec-card-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+    }
+
+    .rec-hero-details h4 {
+        font-size: 13px;
+    }
+
+    .rec-hero-details span {
+        font-size: 10px;
+    }
+
+    .rec-card-reason {
+        font-size: 11px;
+        margin-bottom: 6px;
+        line-height: 1.3;
+    }
+
+    .btn-rec-select {
+        padding: 5px 0;
+        font-size: 11.5px;
+        border-radius: 6px;
     }
 }
 
@@ -1756,6 +2203,7 @@ html[data-theme="light"] .overlay-content {
     font-weight: 600;
     color: var(--text-secondary);
     user-select: none;
+    white-space: nowrap;
 }
 
 .toggle-switch {
